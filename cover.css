@@ -26,13 +26,15 @@ a:hover {
 
 html,
 body {
-  height: 100%;
+  height: 0;
   background-color: #333;
+  /*! width: 40px; */
 }
 body {
   color: #fff;
   text-align: center;
   text-shadow: 0 .05rem .1rem rgba(0,0,0,.5);
+  /*! padding-top: 80px; */
 }
 
 /* Extra markup and styles for table-esque vertical and horizontal centering */
@@ -131,7 +133,6 @@ body {
 @media (min-width: 40em) {
   /* Pull out the header and footer */
   .masthead {
-    position: fixed;
     top: 0;
   }
   .mastfoot {
