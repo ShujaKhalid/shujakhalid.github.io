@@ -29,6 +29,9 @@ body {
   height: 0;
   background-color: #333;
   /*! width: 40px; */
+  margin-left: 100px;
+  margin-right: 100px;
+  margin-bottom: 100px;
 }
 body {
   color: #fff;
