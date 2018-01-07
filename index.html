@@ -118,7 +118,7 @@
 								</div>
 								<div class="4u 12u$(mobile)">
 									<article class="item">
-										<a href="#behave" class="image fit"><img src="images/behave.png" alt="" /></a>
+										<a href="#behave" class="image fit"><img src="images/behave.PNG" alt="" /></a>
 										<header>
 											<h3>Behaviour Cloning using Keras (Deep Learning)</h3>
 										</header>
@@ -132,7 +132,7 @@
 								</div>
 								<div class="4u$ 12u$(mobile)">
 									<article class="item">
-										<a href="#ec2" class="image fit"><img src="images/ec2.png" alt="" /></a>
+										<a href="#ec2" class="image fit"><img src="images/ec2.PNG" alt="" /></a>
 										<header>
 											<h3>Amazon Web Services (EC2) - Web Application</h3>
 										</header>
@@ -161,12 +161,40 @@
 				            <h2 class="cover-heading">Behaviour Cloning (In-progress) </h2>
 				            <p class="lead"><i>Background</i></p>
 				            <p>
-
+				            This project was just amazing! For anyone who is interested in autonomous vehicles, there is no better project to understand how Deep Learning is used to tackle autonomous driving. This proect uses a simulator and requires the user to produce training data by driving around the track. A CNN is then trained using this data. The results are astounding and are shown below:
 
 				            </p>
-				            <p class="lead"> <a href="#" class="button scrolly">Code</a> </p>
-				            <p class="lead"> <i>Results</i> </p>
+				            <p class="lead"> <a href="https://github.com/ShujaKhalid/Computer-Vision-LaneFindingAlgorithm" class="button scrolly">Code</a> </p>
+							<div class="not-first-item graphic-container wide center">
+									<div class="Movie graphic">
+										<div class="figure-content">
+											<!-- sandvox.YouTubeElement -->
+											<div class="YouTubeElement">
+												<div class="video">
+													<iframe allowFullScreen="true" frameborder="0" id="youtube3" mozallowfullscreen="true" src="https://s3.amazonaws.com/sk-portfolio/autoDrive.avi" title="YouTube video player" webkitAllowFullScreen="true" width="600" height="337" class="graphic"></iframe>
+												</div>
+											</div>
+											<!-- /sandvox.YouTubeElement -->
+										</div>
+									</div>
+							</div>
+							<div class="not-first-item graphic-container wide center">
+									<div class="Movie graphic">
+										<div class="figure-content">
+											<!-- sandvox.YouTubeElement -->
+											<div class="YouTubeElement">
+												<div class="video">
+													<iframe allowFullScreen="true" frameborder="0" id="youtube3" mozallowfullscreen="true" src="https://s3.amazonaws.com/sk-portfolio/video.mp4" title="YouTube video player" webkitAllowFullScreen="true" width="600" height="337" class="graphic"></iframe>
+												</div>
+											</div>
+											<!-- /sandvox.YouTubeElement -->
+										</div>
+									</div>
+							</div>
+				            <p class="lead"> <a href="https://github.com/ShujaKhalid/Deep-Learning-BehaviourCloning" class="button scrolly">Code</a> </p>
 				            <p class="lead"> <i>Lessons Learned</i> </p>
+				            Data augmentation and pre-processing is EXTREMELY important. An understanding of what types of data actually effect driving performance is also key. Simply doing 10 laps around the track is insufficient. Infact, the car might not even be able to make it past the first turn in autonomous mode if data is acquired this way. Such data needs to be supplemented with extensive turn data and correction data to train the model to get out of situations where ist is about to wear off the driveable portion of the track.   
+
 				          </main>
 					</section>
 					<section id="classify" class="three">
@@ -174,12 +202,16 @@
 				            <h2 class="cover-heading">Traffic Sign Classification (In-progress) </h2>
 				            <p class="lead"><i>Background</i></p>
 				            <p>
-
+				            The motivation behind the project was to create a CNN that can classify German traffic signs with a classification accuracy of atleast 93%. The CNN uses components of the LeNet architecture.
 
 				            </p>
-				            <p class="lead"> <a href="#" class="button scrolly">Code</a> </p>
+				            <p class="lead"> <a href="https://github.com/ShujaKhalid/Computer-Vision-TrafficSignClassifier" class="button scrolly">Code</a> </p>
 				            <p class="lead"> <i>Results</i> </p>
+				            The adapted LeNet architecture results in a test classification accuracy of ~95%
+
 				            <p class="lead"> <i>Lessons Learned</i> </p>
+				            The influence of data augmentation cnan once again not be ignored. In computer Vision tasks this is an absolute must. Traffic signs can be flipped, rotated to produce additional data which can be used for balancing non-uniform data. Doing so has proven to increase accuracy on test data even further ~99%
+
 				          </main>
 					</section>
 					<section id="detect" class="three">
