@@ -115,6 +115,12 @@
 											<h3>Traffic Sign Classification using Tensorflow (Deep Learning)</h3>
 										</header>
 									</article>
+									<article class="item">
+										<a href="#detect2" class="image fit"><img src="images/final_image.png" alt="" /></a>
+										<header>
+											<h3>Advanced Lane Detection using CV</h3>
+										</header>
+									</article>
 								</div>
 								<div class="4u 12u$(mobile)">
 									<article class="item">
@@ -129,6 +135,12 @@
 											<h3>Player Availability Rating (PAR) - A Tool for Quantifying Skater Performance for NHL General Managers</h3>
 										</header>
 									</article>
+									<article class="item">
+										<a href="#tstory" class="image fit"><img src="images/tstory.png" alt="" /></a>
+										<header>
+											<h3>Trip Story!</h3>
+										</header>
+									</article>
 								</div>
 								<div class="4u$ 12u$(mobile)">
 									<article class="item">
@@ -141,12 +153,6 @@
 										<a href="#lambda" class="image fit"><img src="images/lambda.png" alt="" /></a>
 										<header>
 											<h3>Amazon Web Services (Lambda) - Web Application</h3>
-										</header>
-									</article>
-									<article class="item">
-										<a href="#tstory" class="image fit"><img src="images/tstory.png" alt="" /></a>
-										<header>
-											<h3>Trip Story!</h3>
 										</header>
 									</article>
 								</div>
@@ -197,6 +203,47 @@
 				            <p class="lead"> <i>Lessons Learned</i> </p>
 				            Data augmentation and pre-processing is EXTREMELY important. An understanding of what types of data actually effect driving performance is also key. Simply doing 10 laps around the track is insufficient. Infact, the car might not even be able to make it past the first turn in autonomous mode if data is acquired this way. Such data needs to be supplemented with extensive turn data and correction data to train the model to get out of situations where it is about to wear off the driveable portion of the track.   
 
+				          </main>
+					</section>
+					<section id="detect2" class="three">
+				          <main role="main" class="inner cover">
+				            <h2 class="cover-heading">Lane Detection Algorithm</h2>
+				            <p class="lead"><i>Background</i></p>
+				            <p>
+				            The aim of this project was to use advanced lane detection techniques to mark the driveable region around a car. Once a methodology was successfully adopted to identify lanes in a given image, the algorithm was extended to a video. The videos below illustrate the strength of this technique:
+
+				            </p>
+				            <p class="lead"> <a href="https://github.com/ShujaKhalid/Computer-Vision-LaneFindingAlgorithm" class="button scrolly">Code</a> </p>
+							<div class="not-first-item graphic-container wide center">
+									<div class="Movie graphic">
+										<div class="figure-content">
+											<!-- sandvox.YouTubeElement -->
+											<div class="YouTubeElement">
+												<div class="video">
+													<iframe allowFullScreen="true" frameborder="0" id="youtube3" mozallowfullscreen="true" src="https://s3.amazonaws.com/sk-portfolio/final_video.mp4" title="YouTube video player" webkitAllowFullScreen="true" width="600" height="337" class="graphic"></iframe>
+												</div>
+											</div>
+											<!-- /sandvox.YouTubeElement -->
+										</div>
+									</div>
+							</div>
+
+							<div class="not-first-item graphic-container wide center">
+									<div class="Movie graphic">
+										<div class="figure-content">
+											<!-- sandvox.YouTubeElement -->
+											<div class="YouTubeElement">
+												<div class="video">
+													<iframe allowFullScreen="true" frameborder="0" id="youtube3" mozallowfullscreen="true" src="https://s3.amazonaws.com/sk-portfolio/challenge_video.mp4" title="YouTube video player" webkitAllowFullScreen="true" width="600" height="337" class="graphic"></iframe>
+												</div>
+											</div>
+											<!-- /sandvox.YouTubeElement -->
+										</div>
+									</div>
+							</div>
+					      <p class="lead"> <i>Lessons Learned</i> </p>
+					      This project took some of the under-developed concepts from the earlier lane detection project and provided alternatives to them. In a lot of cases, only considering a portion of the image isnt suitable and can lead to bad lane detections based on the conditions. However, this project used techniques to extract the maximum amount of information from an image to create a suitable binary map to apply thresholding techniques on. This approach is a lot more robust than its earlier iteration and sets up a foundation that can easily be built upon.
+					      <p></p>
 				          </main>
 					</section>
 					<section id="classify" class="three">
