@@ -4,9 +4,9 @@
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<title>Shuja Khalid</title>
-	<meta name="description" content="Shuja Khalid — Research Scientist (Huawei Canada) and PhD, University of Toronto. Machine learning and computer vision: 3D Gaussian splatting, neural rendering, representation learning, and AI for healthcare." />
+	<meta name="description" content="Shuja Khalid — Senior Research Scientist (Huawei Canada) and PhD, University of Toronto. Machine learning and computer vision: 3D Gaussian splatting, neural rendering, representation learning, and AI for healthcare." />
 	<meta property="og:title" content="Shuja Khalid" />
-	<meta property="og:description" content="Research Scientist working on 3D vision, neural rendering, and AI for healthcare." />
+	<meta property="og:description" content="Senior Research Scientist working on 3D vision, neural rendering, and AI for healthcare." />
 	<meta name="theme-color" content="#0f172a" />
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,7 +20,6 @@
 			--accent-soft: #eef3fc;
 			--line: #e9ebee;
 			--card: #ffffff;
-			--bg: #ffffff;
 			--chip: #f3f5f8;
 			--max: 820px;
 		}
@@ -34,7 +33,7 @@
 		* { box-sizing: border-box; }
 		html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
 		body {
-			margin: 0; background: var(--bg); color: var(--ink);
+			margin: 0; background: var(--bg, #fff); color: var(--ink);
 			font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 			font-size: 16px; line-height: 1.6; -webkit-font-smoothing: antialiased;
 		}
@@ -89,6 +88,20 @@
 		.chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
 		.chip { font-size: 13px; padding: 5px 12px; border-radius: 8px; background: var(--chip); color: var(--soft); }
 
+		/* ---- CV items (experience / education) ---- */
+		.cv { list-style: none; padding: 0; margin: 0; }
+		.cv li { display: flex; gap: 16px; align-items: center; padding: 15px 0; border-bottom: 1px solid var(--line); }
+		.cv li:last-child { border-bottom: none; }
+		.cv .logo {
+			flex: 0 0 auto; width: 48px; height: 48px; border-radius: 11px; background: #fff;
+			border: 1px solid var(--line); padding: 7px; object-fit: contain;
+		}
+		.cv .body { flex: 1 1 auto; min-width: 0; }
+		.cv .body .r { font-weight: 600; color: var(--ink); font-size: 15.5px; }
+		.cv .body .o { color: var(--soft); font-size: 14.5px; }
+		.cv .body .o .place { color: var(--muted); }
+		.cv .when { flex: 0 0 auto; color: var(--muted); font-size: 13.5px; font-variant-numeric: tabular-nums; white-space: nowrap; padding-left: 8px; }
+
 		/* ---- News ---- */
 		.news { list-style: none; padding: 0; margin: 0; }
 		.news li { display: flex; gap: 18px; padding: 11px 0; border-bottom: 1px solid var(--line); }
@@ -109,6 +122,13 @@
 			border-radius: 10px; border: 1px solid var(--line); background: #f4f5f7;
 		}
 		.pub .thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+		.pub .thumb.tile {
+			display: flex; flex-direction: column; align-items: center; justify-content: center;
+			text-align: center; color: #fff; padding: 10px;
+			background: linear-gradient(145deg, #0e7490, #155e75);
+		}
+		.pub .thumb.tile .v { font-family: 'Newsreader', serif; font-size: 18px; font-weight: 600; line-height: 1.15; }
+		.pub .thumb.tile .y { font-size: 12px; opacity: .85; margin-top: 4px; }
 		.pub .meta { flex: 1 1 auto; min-width: 0; }
 		.pub h3 { margin: 0 0 5px; font-size: 18px; line-height: 1.3; }
 		.pub h3 a { color: var(--ink); }
@@ -125,6 +145,7 @@
 		.pub .year { font-size: 13.5px; color: var(--muted); }
 		.pub .plinks { margin-top: 8px; font-size: 13.5px; }
 		.pub .plinks a { margin-right: 14px; font-weight: 500; }
+		.cited { color: var(--muted); font-size: 13px; }
 
 		/* ---- Compact list ---- */
 		.list { list-style: none; padding: 0; margin: 0; }
@@ -150,6 +171,7 @@
 			.news li { flex-direction: column; gap: 2px; }
 			.news .date { flex-basis: auto; }
 			.metric { flex-basis: calc(50% - 5px); }
+			.cv .when { display: none; }
 		}
 	</style>
 </head>
@@ -161,7 +183,7 @@
 			<div class="avatar" aria-hidden="true">SK</div>
 			<div class="intro">
 				<h1>Shuja Khalid</h1>
-				<p class="role"><strong>Research Scientist</strong>, Huawei Canada &nbsp;·&nbsp; PhD, University of Toronto</p>
+				<p class="role"><strong>Senior Research Scientist</strong>, Huawei Canada &nbsp;·&nbsp; PhD, University of Toronto</p>
 				<p class="where">Toronto, Canada &nbsp;·&nbsp; Affiliate, Vector Institute &nbsp;·&nbsp; skhalid [at] cs.toronto.edu</p>
 				<nav class="links">
 					<a href="mailto:skhalid@cs.toronto.edu">✉ Email</a>
@@ -183,8 +205,8 @@
 		<!-- ===== About ===== -->
 		<section class="bio" id="about">
 			<h2>About</h2>
-			<p>I am a Research Scientist at <strong>Huawei Canada</strong> in Toronto, working on 3D computer vision and neural rendering. I completed my PhD in Machine Learning at the <strong>University of Toronto</strong> (2019–2024), advised by Prof. Frank Rudzicz, where my thesis focused on self-supervised visual scene understanding using structured representations.</p>
-			<p>My current research centers on <strong>3D Gaussian splatting</strong> and neural rendering — making high-fidelity scene reconstruction more compact, efficient, and controllable. Alongside this, I have an ongoing interest in representation learning, explainable AI, and applying machine learning to healthcare, from surgical skill assessment to clinical outcome prediction.</p>
+			<p>I am a Senior Research Scientist at <strong>Huawei Canada</strong> in Toronto, working on 3D computer vision and neural rendering. I completed my PhD in Machine Learning at the <strong>University of Toronto</strong> (2019–2024), advised by Prof. Frank Rudzicz, where my thesis focused on self-supervised visual scene understanding using structured representations.</p>
+			<p>My current research centers on <strong>3D Gaussian splatting</strong> and neural rendering — making high-fidelity scene reconstruction more compact, efficient, and controllable. Alongside this, I have a long-standing interest in representation learning, explainable AI, and applying machine learning to healthcare, from surgical skill assessment to clinical outcome prediction.</p>
 			<div class="chips">
 				<span class="chip">3D Gaussian Splatting</span>
 				<span class="chip">Neural Rendering</span>
@@ -195,13 +217,67 @@
 			</div>
 		</section>
 
+		<!-- ===== Experience ===== -->
+		<section id="experience">
+			<h2>Experience</h2>
+			<ul class="cv">
+				<li>
+					<img class="logo" src="images/logos/huawei.png" alt="Huawei" loading="lazy" />
+					<div class="body">
+						<div class="r">Senior Research Scientist</div>
+						<div class="o">Huawei Canada &nbsp;<span class="place">· Toronto, ON</span></div>
+					</div>
+					<div class="when">2024 – Present</div>
+				</li>
+				<li>
+					<img class="logo" src="images/logos/sst.png" alt="Surgical Safety Technologies" loading="lazy" />
+					<div class="body">
+						<div class="r">Deep Learning Engineer</div>
+						<div class="o">Surgical Safety Technologies &nbsp;<span class="place">· Toronto, ON</span></div>
+					</div>
+					<div class="when">2020 – 2024</div>
+				</li>
+				<li>
+					<img class="logo" src="images/logos/sunnybrook.png" alt="Sunnybrook Health Sciences Centre" loading="lazy" />
+					<div class="body">
+						<div class="r">Machine Learning Researcher</div>
+						<div class="o">Sunnybrook Health Sciences Centre &nbsp;<span class="place">· Toronto, ON</span></div>
+					</div>
+					<div class="when">2018 – 2020</div>
+				</li>
+				<li>
+					<img class="logo" src="images/logos/ge.png" alt="General Electric" loading="lazy" />
+					<div class="body">
+						<div class="r">Engineer</div>
+						<div class="o">General Electric &nbsp;<span class="place">· Peterborough, ON</span></div>
+					</div>
+					<div class="when">2016 – 2018</div>
+				</li>
+			</ul>
+		</section>
+
+		<!-- ===== Education ===== -->
+		<section id="education">
+			<h2>Education</h2>
+			<ul class="cv">
+				<li>
+					<img class="logo" src="images/logos/uoft.png" alt="University of Toronto" loading="lazy" />
+					<div class="body">
+						<div class="r">PhD, Machine Learning (Computer Science)</div>
+						<div class="o">University of Toronto &nbsp;<span class="place">· advised by Prof. Frank Rudzicz</span></div>
+					</div>
+					<div class="when">2019 – 2024</div>
+				</li>
+			</ul>
+		</section>
+
 		<!-- ===== News ===== -->
 		<section id="news">
 			<h2>News</h2>
 			<ul class="news">
 				<li><span class="date">2026</span><span class="what"><strong>LatentGS</strong> accepted to <strong>ICLR 2026</strong> — probabilistic densification for efficient, compact, and faster 3D Gaussian splatting.</span></li>
 				<li><span class="date">2025</span><span class="what"><strong>GaussianVAE</strong> presented at <strong>CVPR 2025</strong> — adaptive learning dynamics of 3D Gaussians for high-fidelity super-resolution.</span></li>
-				<li><span class="date">2024</span><span class="what">Completed my <strong>PhD in Machine Learning</strong> at the University of Toronto and joined Huawei Canada as a Research Scientist.</span></li>
+				<li><span class="date">2024</span><span class="what">Completed my <strong>PhD in Machine Learning</strong> at the University of Toronto and joined Huawei Canada as a Senior Research Scientist.</span></li>
 			</ul>
 		</section>
 
@@ -215,7 +291,7 @@
 					<h3><a href="https://openreview.net/forum?id=5Dgcw1qhXq">LatentGS: Probabilistic Densification for Efficient, Compact, and Faster 3D Gaussian Splatting</a></h3>
 					<p class="authors"><span class="me">S. Khalid</span>, M. Ibrahim, Y. Liu</p>
 					<div class="venue-row"><span class="badge hl">ICLR 2026</span><span class="year">Neural rendering · variational densification</span></div>
-					<div class="plinks"><a href="https://openreview.net/forum?id=5Dgcw1qhXq">OpenReview</a><a href="https://openreview.net/pdf?id=5Dgcw1qhXq">PDF</a></div>
+					<div class="plinks"><a href="https://openreview.net/forum?id=5Dgcw1qhXq">OpenReview</a><a href="https://openreview.net/pdf?id=5Dgcw1qhXq">PDF</a><span class="cited">Cited by 1</span></div>
 				</div>
 			</article>
 
@@ -230,6 +306,16 @@
 			</article>
 
 			<article class="pub">
+				<a class="thumb" href="https://arxiv.org/abs/2303.08695"><img src="images/papers/refinerf.png" alt="RefiNeRF camera-pose recovery" loading="lazy" /></a>
+				<div class="meta">
+					<h3><a href="https://arxiv.org/abs/2303.08695">RefiNeRF: Modelling Dynamic Neural Radiance Fields with Inconsistent or Missing Camera Parameters</a></h3>
+					<p class="authors"><span class="me">S. Khalid</span>, F. Rudzicz</p>
+					<div class="venue-row"><span class="badge hl">WACV 2024</span><span class="year">Pose-free dynamic NeRF</span></div>
+					<div class="plinks"><a href="https://arxiv.org/abs/2303.08695">arXiv</a><a href="https://arxiv.org/pdf/2303.08695">PDF</a></div>
+				</div>
+			</article>
+
+			<article class="pub">
 				<a class="thumb" href="https://arxiv.org/abs/2209.10399"><img src="images/papers/wildnerf.png" alt="wildNeRF dynamic scene synthesis" loading="lazy" /></a>
 				<div class="meta">
 					<h3><a href="https://arxiv.org/abs/2209.10399">wildNeRF: Complete View Synthesis of In-the-Wild Dynamic Scenes from Sparse Monocular Data</a></h3>
@@ -240,12 +326,12 @@
 			</article>
 
 			<article class="pub">
-				<a class="thumb" href="https://arxiv.org/abs/2207.00066"><img src="images/papers/readmission.png" alt="Bidirectional LSTM architecture for readmission prediction" loading="lazy" /></a>
+				<a class="thumb tile" href="https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2763474"><span class="v">JAMA<br>Network Open</span><span class="y">2020</span></a>
 				<div class="meta">
-					<h3><a href="https://arxiv.org/abs/2207.00066">Advances in Prediction of Readmission Rates Using Long-Term Short-Term Memory Networks on Healthcare Insurance Data</a></h3>
-					<p class="authors"><span class="me">S. Khalid</span>, F. Matos, A. Abunimer, J. Bartlett, R. Duszak, M. Horny, J. Gichoya, et al.</p>
-					<div class="venue-row"><span class="badge">arXiv</span><span class="year">Clinical outcome prediction</span></div>
-					<div class="plinks"><a href="https://arxiv.org/abs/2207.00066">arXiv</a><a href="https://arxiv.org/pdf/2207.00066">PDF</a></div>
+					<h3><a href="https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2763474">Evaluation of Deep Learning Models for Identifying Surgical Actions and Measuring Performance</a></h3>
+					<p class="authors"><span class="me">S. Khalid</span>, M. Goldenberg, T. Grantcharov, B. Taati, F. Rudzicz</p>
+					<div class="venue-row"><span class="badge">JAMA Network Open</span><span class="badge star">★ Most cited</span></div>
+					<div class="plinks"><a href="https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2763474">Article</a><a href="https://doi.org/10.1001/jamanetworkopen.2020.1664">DOI</a><span class="cited">Cited by 181</span></div>
 				</div>
 			</article>
 		</section>
@@ -256,7 +342,7 @@
 			<ul class="list">
 				<li>
 					<div class="t"><a href="https://openreview.net/forum?id=5Dgcw1qhXq">LatentGS: Probabilistic Densification for Efficient, Compact, and Faster 3D Gaussian Splatting</a></div>
-					<div class="d"><span class="me">S. Khalid</span>, M. Ibrahim, Y. Liu · ICLR 2026</div>
+					<div class="d"><span class="me">S. Khalid</span>, M. Ibrahim, Y. Liu · ICLR 2026 · Cited by 1</div>
 				</li>
 				<li>
 					<div class="t"><a href="https://arxiv.org/abs/2506.07897">GaussianVAE: Adaptive Learning Dynamics of 3D Gaussians for High-Fidelity Super-Resolution</a></div>
@@ -267,16 +353,20 @@
 					<div class="d">F. Z. Wang, Z. Chen, <span class="me">S. Khalid</span>, E. Mandelcorn, T. Felfeli · Investigative Ophthalmology &amp; Visual Science (ARVO), 2025</div>
 				</li>
 				<li>
+					<div class="t"><a href="https://arxiv.org/abs/2303.08695">RefiNeRF: Modelling Dynamic Neural Radiance Fields with Inconsistent or Missing Camera Parameters</a></div>
+					<div class="d"><span class="me">S. Khalid</span>, F. Rudzicz · WACV 2024</div>
+				</li>
+				<li>
 					<div class="t">Self-Supervised Visual Scene Understanding Using Structured Representations for Surgical Applications</div>
-					<div class="d"><span class="me">S. Khalid</span> · PhD Thesis, University of Toronto, 2024</div>
+					<div class="d"><span class="me">S. Khalid</span> · PhD Thesis, University of Toronto, 2024 · Cited by 9</div>
 				</li>
 				<li>
 					<div class="t">Assessment of the Predictive Value of Artificial Intelligence for Ophthalmic Diseases Using Electronic Health Records: A Systematic Review and Meta-Analysis</div>
-					<div class="d">T. Felfeli, R. S. Huang, T. S. J. Lee, …, <span class="me">S. Khalid</span>, et al. · JFO Open Ophthalmology, 2024</div>
+					<div class="d">T. Felfeli, R. S. Huang, T. S. J. Lee, …, <span class="me">S. Khalid</span>, et al. · JFO Open Ophthalmology, 2024 · Cited by 6</div>
 				</li>
 				<li>
 					<div class="t">Length of Stay Prediction Models for Oral Cancer Surgery: Machine Learning, Statistical and ACS-NSQIP</div>
-					<div class="d">A. Namavarian, A. Gabinet-Equihua, Y. Deng, <span class="me">S. Khalid</span>, et al. · The Laryngoscope, 2024</div>
+					<div class="d">A. Namavarian, A. Gabinet-Equihua, Y. Deng, <span class="me">S. Khalid</span>, et al. · The Laryngoscope, 2024 · Cited by 5</div>
 				</li>
 				<li>
 					<div class="t"><a href="https://arxiv.org/abs/2209.10399">wildNeRF: Complete View Synthesis of In-the-Wild Dynamic Scenes from Sparse Monocular Data</a></div>
@@ -284,15 +374,15 @@
 				</li>
 				<li>
 					<div class="t"><a href="https://arxiv.org/abs/2207.00066">Advances in Prediction of Readmission Rates Using LSTM Networks on Healthcare Insurance Data</a></div>
-					<div class="d"><span class="me">S. Khalid</span>, F. Matos, A. Abunimer, et al. · arXiv, 2022</div>
+					<div class="d"><span class="me">S. Khalid</span>, F. Matos, A. Abunimer, et al. · arXiv, 2022 · Cited by 2</div>
 				</li>
 				<li>
-					<div class="t"><a href="https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2762915">Evaluation of Deep Learning Models for Identifying Surgical Actions and Measuring Performance</a> &nbsp;<span class="badge star">★ Most cited</span></div>
-					<div class="d"><span class="me">S. Khalid</span>, M. Goldenberg, T. Grantcharov, B. Taati, F. Rudzicz · JAMA Network Open, 2020</div>
+					<div class="t"><a href="https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2763474">Evaluation of Deep Learning Models for Identifying Surgical Actions and Measuring Performance</a> &nbsp;<span class="badge star">★ Most cited</span></div>
+					<div class="d"><span class="me">S. Khalid</span>, M. Goldenberg, T. Grantcharov, B. Taati, F. Rudzicz · JAMA Network Open, 2020 · Cited by 181</div>
 				</li>
 				<li>
 					<div class="t">Automated Methods of Technical Skill Assessment in Surgery: A Systematic Review</div>
-					<div class="d">M. Levin, T. McKechnie, <span class="me">S. Khalid</span>, T. P. Grantcharov, M. Goldenberg · Journal of Surgical Education, 2019</div>
+					<div class="d">M. Levin, T. McKechnie, <span class="me">S. Khalid</span>, T. P. Grantcharov, M. Goldenberg · Journal of Surgical Education, 2019 · Cited by 129</div>
 				</li>
 			</ul>
 		</section>
@@ -306,12 +396,12 @@
 					<div class="d"><span class="me">S. Khalid</span>, M. G. Goldenberg, T. P. Grantcharov, B. Taati, F. Rudzicz · US Patent 11,596,482 B2 (granted), 2023</div>
 				</li>
 				<li>
-					<div class="t"><a href="https://patents.google.com/patent/US20230419503A1">System and Method for Operating Room Human Traffic Monitoring</a></div>
-					<div class="d">F. Rudzicz, A. Chaudhry, <span class="me">S. Khalid</span>, T. Li, T. Grantcharov · US Patent App. US20230419503A1, 2022</div>
+					<div class="t"><a href="https://patents.google.com/patent/WO2022104484A1">Systems and Methods for Surgical Video De-Identification</a></div>
+					<div class="d">T. Li, <span class="me">S. Khalid</span>, K. Yang, F. Rudzicz, T. Grantcharov · WO Patent App. WO2022104484A1, 2022 · Cited by 12</div>
 				</li>
 				<li>
-					<div class="t"><a href="https://patents.google.com/patent/WO2022104484A1">Systems and Methods for Surgical Video De-Identification</a></div>
-					<div class="d">T. Li, <span class="me">S. Khalid</span>, K. Yang, F. Rudzicz, T. Grantcharov · WO Patent App. WO2022104484A1, 2022</div>
+					<div class="t"><a href="https://patents.google.com/patent/US20230419503A1">System and Method for Operating Room Human Traffic Monitoring</a></div>
+					<div class="d">F. Rudzicz, A. Chaudhry, <span class="me">S. Khalid</span>, T. Li, T. Grantcharov · US Patent App. US20230419503A1, 2022 · Cited by 1</div>
 				</li>
 			</ul>
 		</section>
