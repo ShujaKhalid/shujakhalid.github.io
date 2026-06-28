@@ -1,476 +1,273 @@
-<!DOCTYPE HTML>
-<!--
-	Prologue by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>Welcome!</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
-		<link rel="stylesheet" href="assets/css/main.css" />
-<!-- 		<link rel="stylesheet" href="https://s3.amazonaws.com/gmaiplaybook/bootstrap.min.css">
- -->
-    	<link rel="stylesheet" href="https://s3.amazonaws.com/gmaiplaybook/style_facebook.css">
- 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
-		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
-	</head>
-	<body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>Shuja Khalid</title>
+	<meta name="description" content="Shuja Khalid — PhD Candidate in Machine Learning and Computer Vision at the University of Toronto." />
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+	<style>
+		:root {
+			--ink: #1a1a1a;
+			--muted: #6b6b6b;
+			--accent: #1d6fb8;
+			--line: #ececec;
+			--bg: #ffffff;
+			--max: 760px;
+		}
+		* { box-sizing: border-box; }
+		html { -webkit-text-size-adjust: 100%; }
+		body {
+			margin: 0;
+			background: var(--bg);
+			color: var(--ink);
+			font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+			font-size: 16px;
+			line-height: 1.65;
+			-webkit-font-smoothing: antialiased;
+		}
+		.wrap {
+			max-width: var(--max);
+			margin: 0 auto;
+			padding: 64px 24px 96px;
+		}
+		a { color: var(--accent); text-decoration: none; }
+		a:hover { text-decoration: underline; }
+		h1, h2, h3 { font-family: 'Lora', Georgia, serif; font-weight: 600; line-height: 1.25; }
+
+		/* Header */
+		.header { display: flex; gap: 32px; align-items: center; flex-wrap: wrap; }
+		.avatar {
+			flex: 0 0 auto;
+			width: 132px; height: 132px;
+			border-radius: 50%;
+			background: linear-gradient(135deg, #2c5364, #203a43, #0f2027);
+			color: #fff;
+			display: flex; align-items: center; justify-content: center;
+			font-family: 'Lora', serif; font-size: 46px; font-weight: 600;
+			letter-spacing: 1px;
+			box-shadow: 0 4px 18px rgba(0,0,0,0.12);
+		}
+		.intro { flex: 1 1 320px; }
+		.intro h1 { margin: 0 0 4px; font-size: 32px; }
+		.intro .role { margin: 0; color: var(--ink); font-size: 17px; }
+		.intro .affil { margin: 2px 0 0; color: var(--muted); font-size: 15px; }
+		.intro .email { margin: 6px 0 0; color: var(--muted); font-size: 15px; }
+
+		.links { margin-top: 16px; display: flex; flex-wrap: wrap; gap: 8px 18px; font-size: 15px; }
+		.links a { color: var(--accent); }
+		.links span.sep { color: #cfcfcf; }
+
+		/* Sections */
+		section { margin-top: 52px; }
+		section > h2 {
+			font-size: 22px; margin: 0 0 18px;
+			padding-bottom: 8px; border-bottom: 1px solid var(--line);
+		}
+		.bio p { margin: 0 0 14px; }
+
+		/* News */
+		.news { list-style: none; padding: 0; margin: 0; }
+		.news li { display: flex; gap: 16px; padding: 8px 0; border-bottom: 1px dashed var(--line); }
+		.news li:last-child { border-bottom: none; }
+		.news .date { flex: 0 0 96px; color: var(--muted); font-size: 14px; padding-top: 1px; }
+		.news .what { flex: 1 1 auto; }
+
+		/* Projects (publication-style list) */
+		.entry { display: flex; gap: 22px; padding: 22px 0; border-bottom: 1px solid var(--line); }
+		.entry:last-child { border-bottom: none; }
+		.thumb {
+			flex: 0 0 150px; width: 150px; height: 100px;
+			overflow: hidden; border-radius: 6px; border: 1px solid var(--line);
+			background: #fafafa;
+		}
+		.thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+		.entry .meta { flex: 1 1 auto; }
+		.entry h3 { margin: 0 0 4px; font-size: 18px; }
+		.entry .tags { color: var(--muted); font-size: 14px; margin: 0 0 8px; }
+		.entry p { margin: 0 0 10px; font-size: 15px; color: #333; }
+		.actions a {
+			display: inline-block; margin-right: 14px; font-size: 14px; font-weight: 500;
+		}
+
+		footer {
+			margin-top: 64px; padding-top: 20px; border-top: 1px solid var(--line);
+			color: var(--muted); font-size: 13px; text-align: center;
+		}
+
+		@media (max-width: 600px) {
+			.wrap { padding: 40px 18px 64px; }
+			.header { gap: 20px; }
+			.avatar { width: 96px; height: 96px; font-size: 34px; }
+			.intro h1 { font-size: 27px; }
+			.entry { flex-direction: column; gap: 12px; }
+			.thumb { width: 100%; height: 160px; flex-basis: auto; }
+			.news li { flex-direction: column; gap: 2px; }
+			.news .date { flex-basis: auto; }
+		}
+	</style>
+</head>
+<body>
+	<div class="wrap">
 
 		<!-- Header -->
-			<div id="header">
+		<header class="header">
+			<div class="avatar" aria-hidden="true">SK</div>
+			<div class="intro">
+				<h1>Shuja Khalid</h1>
+				<p class="role">PhD Candidate, Machine Learning &amp; Computer Vision</p>
+				<p class="affil">University of Toronto · advised by Prof. Frank Rudzicz</p>
+				<p class="email">skhalid <span aria-hidden="true">[at]</span> cs.toronto.edu</p>
+				<nav class="links">
+					<a href="mailto:skhalid@cs.toronto.edu">Email</a>
+					<span class="sep">/</span>
+					<a href="https://github.com/ShujaKhalid">GitHub</a>
+					<span class="sep">/</span>
+					<a href="https://www.linkedin.com/in/shujakhalid/">LinkedIn</a>
+					<span class="sep">/</span>
+					<a href="https://scholar.google.com/citations?user=&hl=en">Scholar</a>
+				</nav>
+			</div>
+		</header>
 
-				<div class="top">
+		<!-- Bio -->
+		<section class="bio" id="about">
+			<h2>About</h2>
+			<p>I am a PhD candidate at the University of Toronto, supervised by Prof. Frank Rudzicz, working at the intersection of machine learning and computer vision. My research centers on visual scene understanding, representation learning, and explainable AI (XAI), with a particular interest in applications to biomedical imaging.</p>
+			<p>More broadly, I enjoy building systems that connect deep learning research to practical, real-world problems — from autonomous-driving perception to cloud-scale applications and sports analytics. Below is a selection of projects spanning these areas.</p>
+		</section>
 
-					<!-- Logo -->
-						<div id="logo">
-<!-- 							<span class="image avatar48"><img src="images/avatar.jpg" alt="" /></span>
- -->							<h1 id="title">Shuja Khalid</h1>
-							<p>PhD Candidate at the University of Toronto (Machine Learning)</p>
-						</div>
+		<!-- News -->
+		<section id="news">
+			<h2>News</h2>
+			<ul class="news">
+				<li>
+					<span class="date">Ongoing</span>
+					<span class="what">Pursuing PhD research on representation learning and explainable AI for biomedical computer vision at the University of Toronto.</span>
+				</li>
+				<li>
+					<span class="date">Project</span>
+					<span class="what">Maintaining <a href="http://gmaiplaybook.com/">gmaiplaybook.com</a> — machine-learning tools for quantifying NHL skater performance.</span>
+				</li>
+			</ul>
+		</section>
 
-					<!-- Nav -->
-						<nav id="nav">
-							<!--
+		<!-- Projects -->
+		<section id="projects">
+			<h2>Projects</h2>
 
-								Prologue's nav expects links in one of two formats:
-
-								1. Hash link (scrolls to a different section within the page)
-
-								   <li><a href="#foobar" id="foobar-link" class="icon fa-whatever-icon-you-want skel-layers-ignoreHref"><span class="label">Foobar</span></a></li>
-
-								2. Standard link (sends the user to another page/site)
-
-								   <li><a href="http://foobar.tld" id="foobar-link" class="icon fa-whatever-icon-you-want"><span class="label">Foobar</span></a></li>
-
-							-->
-							<ul>
-								<li><a href="#top" id="top-link" class="skel-layers-ignoreHref"><span class="icon fa-home">Intro</span></a></li>
-								<li><a href="#portfolio" id="portfolio-link" class="skel-layers-ignoreHref"><span class="icon fa-th">Portfolio</span></a></li>
-								<li><a href="#about" id="about-link" class="skel-layers-ignoreHref"><span class="icon fa-user">About Me</span></a></li>
-								<li><a href="#facebook-comments-block-t" id="contact-link" class="skel-layers-ignoreHref"><span class="icon fa-envelope">Comment</span></a></li>
-							</ul>
-						</nav>
-
+			<div class="entry">
+				<div class="thumb"><img src="images/behave.PNG" alt="Behaviour cloning" /></div>
+				<div class="meta">
+					<h3>Behaviour Cloning for Autonomous Driving</h3>
+					<p class="tags">Deep Learning · Keras · CNNs</p>
+					<p>An end-to-end convolutional network that learns to steer a car in simulation from human driving data. Highlights how data augmentation and careful collection of recovery/turn data are critical to robust autonomous control.</p>
+					<div class="actions">
+						<a href="https://github.com/ShujaKhalid/Deep-Learning-BehaviourCloning">Code</a>
+						<a href="https://s3.amazonaws.com/sk-portfolio/autoDrive.mp4">Demo</a>
+					</div>
 				</div>
+			</div>
 
-				<div class="bottom">
-
-					<!-- Social Icons -->
-						<ul class="icons">
-							<li><a href="https://www.linkedin.com/in/shujakhalid/" class="icon fa-linedin"><span class="label">LinkedIn</span></a></li>
-							<li><a href="https://www.facebook.com/profile.php?id=100008257021189" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
-							<li><a href="https://github.com/ShujaKhalid" class="icon fa-github"><span class="label">Github</span></a></li>
-<!-- 							<li><a href="#" class="icon fa-dribbble"><span class="label">Dribbble</span></a></li>
- -->							
- 							<li><a href="skhalid@cs.toronto.edu" class="icon fa-envelope"><span class="label">Email</span></a></li>
-						</ul>
-
+			<div class="entry">
+				<div class="thumb"><img src="images/final_image.png" alt="Advanced lane detection" /></div>
+				<div class="meta">
+					<h3>Advanced Lane Detection</h3>
+					<p class="tags">Computer Vision · OpenCV</p>
+					<p>A robust pipeline that identifies the drivable region around a vehicle by extracting maximal information from each frame to build a binary map for thresholding — substantially more resilient than a basic lane finder, and extended from images to video.</p>
+					<div class="actions">
+						<a href="https://github.com/ShujaKhalid/Computer-Vision-AdvancedLaneDetection">Code</a>
+						<a href="https://s3.amazonaws.com/sk-portfolio/test_project_video_2.mp4">Demo</a>
+					</div>
 				</div>
-
 			</div>
 
-		<!-- Main -->
-			<div id="main">
-
-				<!-- Intro -->
-					<section id="top" class="one dark cover">
-						<div class="container">
-
-							<header>
-								<h2 class="alt">Welcome!</h2>
-								<p>My name is Shuja Khalid and I am currently pursuing a PhD under the supervision of Prof. Frank Rudzicz at the University of Toronto, where my focus is machine learning and computer vision. I am interested in visual scene understanding, representation learning, XAI, and all things bio-medical.</p>
-							</header>
-
-							<footer>
-								<a href="https://www.linkedin.com/in/shujakhalid/" class="button scrolly">LinkedIn Profile</a>
-							</footer>
-
-						</div>
-					</section>
-
-				<!-- Portfolio -->
-					<section id="portfolio" class="two">
-						<div class="container">
-
-							<header>
-								<h2>Portfolio</h2>
-							</header>
-
-							<p></p>
-
-							<div class="row">
-								<div class="4u 12u$(mobile)">
-									<article class="item">
-										<a href="#detect" class="image fit"><img src="images/solidWhiteRight.jpg" alt="" /></a>
-										<header>
-											<h3>Lane Detection Algorithm</h3>
-										</header>
-									</article>
-									<article class="item">
-										<a href="#classify" class="image fit"><img src="images/classify.jpg" alt="" /></a>
-										<header>
-											<h3>Traffic Sign Classification using Tensorflow (Deep Learning)</h3>
-										</header>
-									</article>
-									<article class="item">
-										<a href="#detect2" class="image fit"><img src="images/final_image.png" alt="" /></a>
-										<header>
-											<h3>Advanced Lane Detection using CV</h3>
-										</header>
-									</article>
-								</div>
-								<div class="4u 12u$(mobile)">
-									<article class="item">
-										<a href="#behave" class="image fit"><img src="images/behave.PNG" alt="" /></a>
-										<header>
-											<h3>Behaviour Cloning using Keras (Deep Learning)</h3>
-										</header>
-									</article>
-									<article class="item">
-										<a href="#par" class="image fit"><img src="https://s3.amazonaws.com/gmaiplaybook/par2.png" alt="" /></a>
-										<header>
-											<h3>Player Availability Rating (PAR) - A Tool for Quantifying Skater Performance for NHL General Managers</h3>
-										</header>
-									</article>
-									<article class="item">
-										<a href="#tstory" class="image fit"><img src="images/tstory.png" alt="" /></a>
-										<header>
-											<h3>Trip Story!</h3>
-										</header>
-									</article>
-								</div>
-								<div class="4u$ 12u$(mobile)">
-									<article class="item">
-										<a href="#ec2" class="image fit"><img src="images/ec2.PNG" alt="" /></a>
-										<header>
-											<h3>Amazon Web Services (EC2) - Web Application</h3>
-										</header>
-									</article>
-									<article class="item">
-										<a href="#lambda" class="image fit"><img src="images/lambda.png" alt="" /></a>
-										<header>
-											<h3>Amazon Web Services (Lambda) - Web Application</h3>
-										</header>
-									</article>
-								</div>
-							</div>
-
-						</div>
-					</section>
-
-				<!-- Portfolio (contd.) -->
-					<section id="behave" class="three">
-				          <main role="main" class="inner cover">
-				            <h2 class="cover-heading">Behaviour Cloning</h2>
-				            <p class="lead"><i>Background</i></p>
-				            <p>
-				            This project was just amazing! For anyone who is interested in autonomous vehicles, there is no better project to understand how Deep Learning is used to tackle autonomous driving. This proect uses a simulator and requires the user to produce training data by driving around the track. A CNN is then trained using this data. The results are astounding and are shown below:
-
-				            </p>
-							<div class="not-first-item graphic-container wide center">
-									<div class="Movie graphic">
-										<div class="figure-content">
-											<!-- sandvox.YouTubeElement -->
-											<div class="YouTubeElement">
-												<div class="video">
-<!-- 													<iframe allowFullScreen="true" frameborder="0" id="youtube3" mozallowfullscreen="true" src="https://s3.amazonaws.com/sk-portfolio/autoDrive.mp4?mute=1" title="YouTube video player" mute=true webkitAllowFullScreen="true" width="600" height="337" class="graphic"></iframe> -->
-													<video controls width="600" height="337">
-  														<source src="https://s3.amazonaws.com/sk-portfolio/autoDrive.mp4" type="video/mp4">
-  													</video>
-												</div>
-											</div>
-											<!-- /sandvox.YouTubeElement -->
-										</div>
-									</div>
-							</div>
-							<div class="not-first-item graphic-container wide center">
-									<div class="Movie graphic">
-										<div class="figure-content">
-											<!-- sandvox.YouTubeElement -->
-											<div class="YouTubeElement">
-												<div class="video">
-													<iframe allowFullScreen="true" frameborder="0" id="youtube3" mozallowfullscreen="true" src="https://s3.amazonaws.com/sk-portfolio/video.mp4" title="YouTube video player" webkitAllowFullScreen="true" width="600" height="337" class="graphic"></iframe>
-												</div>
-											</div>
-											<!-- /sandvox.YouTubeElement -->
-										</div>
-									</div>
-							</div>
-				            <p class="lead"> <a href="https://github.com/ShujaKhalid/Deep-Learning-BehaviourCloning" class="button scrolly">Code</a> </p>
-				            <p class="lead"> <i>Lessons Learned</i> </p>
-				            Data augmentation and pre-processing is EXTREMELY important. An understanding of what types of data actually effect driving performance is also key. Simply doing 10 laps around the track is insufficient. Infact, the car might not even be able to make it past the first turn in autonomous mode if data is acquired this way. Such data needs to be supplemented with extensive turn data and correction data to train the model to get out of situations where it is about to wear off the driveable portion of the track.   
-
-				          </main>
-					</section>
-					<section id="detect2" class="three">
-				          <main role="main" class="inner cover">
-				            <h2 class="cover-heading">Advanced Lane Detection Algorithm</h2>
-				            <p class="lead"><i>Background</i></p>
-				            <p>
-				            The aim of this project was to use advanced lane detection techniques to mark the driveable region around a car. Once a methodology was successfully adopted to identify lanes in a given image, the algorithm was extended to a video. The videos below illustrate the strength of this technique:
-
-				            </p>
-				            <p class="lead"> <a href="https://github.com/ShujaKhalid/Computer-Vision-AdvancedLaneDetection" class="button scrolly">Code</a> </p>
-							<div class="not-first-item graphic-container wide center">
-									<div class="Movie graphic">
-										<div class="figure-content">
-											<!-- sandvox.YouTubeElement -->
-											<div class="YouTubeElement">
-												<div class="video">
-													<iframe allowFullScreen="true" frameborder="0" id="youtube3" mozallowfullscreen="true" src="https://s3.amazonaws.com/sk-portfolio/test_project_video_2.mp4" title="YouTube video player" webkitAllowFullScreen="true" width="600" height="337" class="graphic"></iframe>
-												</div>
-											</div>
-											<!-- /sandvox.YouTubeElement -->
-										</div>
-									</div>
-							</div>
-
-					      <p class="lead"> <i>Lessons Learned</i> </p>
-					      This project took some of the under-developed concepts from the earlier lane detection project and provided alternatives to them. In a lot of cases, only considering a portion of the image isnt suitable and can lead to bad lane detections based on the conditions. However, this project used techniques to extract the maximum amount of information from an image to create a suitable binary map to apply thresholding techniques on. This approach is a lot more robust than its earlier iteration and sets up a foundation that can easily be built upon.
-					      <p></p>
-				          </main>
-					</section>
-					<section id="classify" class="three">
-				          <main role="main" class="inner cover">
-				            <h2 class="cover-heading">Traffic Sign Classification</h2>
-				            <p class="lead"><i>Background</i></p>
-				            <p>
-				            The motivation behind the project was to create a CNN that can classify German traffic signs with a classification accuracy of atleast 93%. The CNN uses components of the LeNet architecture.
-
-				            </p>
-				            <p class="lead"> <a href="https://github.com/ShujaKhalid/Computer-Vision-TrafficSignClassifier" class="button scrolly">Code</a> </p>
-				            <p class="lead"> <i>Results</i> </p>
-				            The adapted LeNet architecture results in a test classification accuracy of ~95%
-
-				            <p class="lead"> <i>Lessons Learned</i> </p>
-				            The influence of data augmentation cnan once again not be ignored. In computer Vision tasks this is an absolute must. Traffic signs can be flipped, rotated to produce additional data which can be used for balancing non-uniform data. Doing so has proven to increase accuracy on test data even further ~99%
-
-				          </main>
-					</section>
-					<section id="detect" class="three">
-				          <main role="main" class="inner cover">
-				            <h2 class="cover-heading">Lane Detection Algorithm</h2>
-				            <p class="lead"><i>Background</i></p>
-				            <p>
-				            The aim of this project was to identify traffic lanes in an image. Once a methodology was successfully adopted to identify lanes in a given image, the algorithm was extended to a video. This project was part of the Udacity self-driving car nanodegree program and was the first time that I incorporated both thresholding techniques and the opencv package to build a lane detection algorithm. The videos below illustrate the strength of this technique:
-
-				            </p>
-				            <p class="lead"> <a href="https://github.com/ShujaKhalid/Computer-Vision-LaneFindingAlgorithm" class="button scrolly">Code</a> </p>
-							<div class="not-first-item graphic-container wide center">
-									<div class="Movie graphic">
-										<div class="figure-content">
-											<!-- sandvox.YouTubeElement -->
-											<div class="YouTubeElement">
-												<div class="video">
-													<iframe allowFullScreen="true" frameborder="0" id="youtube3" mozallowfullscreen="true" src="https://s3.amazonaws.com/sk-portfolio/solidYellowLeft.mp4" title="YouTube video player" webkitAllowFullScreen="true" width="600" height="337" class="graphic"></iframe>
-												</div>
-											</div>
-											<!-- /sandvox.YouTubeElement -->
-										</div>
-									</div>
-							</div>
-
-							<div class="not-first-item graphic-container wide center">
-									<div class="Movie graphic">
-										<div class="figure-content">
-											<!-- sandvox.YouTubeElement -->
-											<div class="YouTubeElement">
-												<div class="video">
-													<iframe allowFullScreen="true" frameborder="0" id="youtube3" mozallowfullscreen="true" src="https://s3.amazonaws.com/sk-portfolio/solidWhiteRight.mp4" title="YouTube video player" webkitAllowFullScreen="true" width="600" height="337" class="graphic"></iframe>
-												</div>
-											</div>
-											<!-- /sandvox.YouTubeElement -->
-										</div>
-									</div>
-							</div>
-					      <p class="lead"> <i>Lessons Learned</i> </p>
-					      Lane detection is an extremely challenging topic and succeptible to error. In my opinion, the most important characteristic is thresholding. When considering only a portion of the image, environmental factors such as lack of natural light can be extremely challenging. 
-
-					      Fine-tuning the parameters to work for each video was very time consuming. Developing a more robust model that can easily adapt to such factors would be the natural next step.
-					      <p></p>
-				          </main>
-					</section>
-					<section id="par" class="three">
-<!-- 						<div class="container">
-
-							<header>
-								<h2>About Me</h2>
-							</header>
-
-							<a href="#" class="image featured"><img src="images/pic08.jpg" alt="" /></a>
-
-							<p>Tincidunt eu elit diam magnis pretium accumsan etiam id urna. Ridiculus
-							ultricies curae quis et rhoncus velit. Lobortis elementum aliquet nec vitae
-							laoreet eget cubilia quam non etiam odio tincidunt montes. Elementum sem
-							parturient nulla quam placerat viverra mauris non cum elit tempus ullamcorper
-							dolor. Libero rutrum ut lacinia donec curae mus vel quisque sociis nec
-							ornare iaculis.</p>
-
-						</div> -->
-
-
-						<main role="main" class="inner cover">
-				            <h2 class="cover-heading">Player Availability Rating (PAR) - A Tool for Quantifying Skater Performance for NHL General Managers</h2>
-				            <p class="lead"> <i>Background</i> </p>
-				            <p>
-				            I am an avid sports fan and love hockey. While working on a university project, I decided to incorporate my two passions, computer science and hockey! I hope you enjoy this website and the tools it has to offer. I am dedicated to this website and will continue to improve my models/algorithms and add more features to it. This is an exciting new age in sports and I am hoping to contribute in any way I can. 	
-				            </p>
-				            <p class="lead"> <a href="http://gmaiplaybook.com/" class="button scrolly">Take me there!</a> </p>
-				            <p class="lead"> <i>Lessons Learned</i> </p>
-				            <p>
-				            This project was one of the most interesting projects that I have worked on. Not only did I learn about web-scraping and fine-tuning different regression based models, I realized that there are a no. of gaps that exist in the sports world today with regards to statistics. A tool to assess the availability of players is of paramount importance but do current statistics really consider the effect of physical attributes to project player performance? How can one quantify the performance of a player if there isn't significant data available? The PAR (Player Availability Rating) attempts to solve theis exact issue. An in depth analysis of the methods used to produce this rating are presented in the following paper:
-				        	</p>
-				            <p class="lead"> <a href="https://s3.amazonaws.com/gmaiplaybook/paper.pdf" class="button scrolly">Paper</a> </p>
-          				</main>
-					</section>
-
-					<section id="ec2" class="three">
-			          <main role="main" class="inner cover">
-			            <h2 class="cover-heading">Amazon Web Services (EC2) - Load Balancer</h2>
-			            <p class="lead"><i>Background</i></p>
-						<p> The purpose of the project is to create a scalable cloud-based web application that can automatically scale itself to adjust to fluctuating user demand. Although Amazon already provides such services, this application provides insight about the level of detail that is required to construct and maintain truly scalable applications. The application should also have the ability to apply transformations to user defined images using the Python based tool ImageMagick.
-						</p>
-			            <p class="lead"> <a href="https://github.com/ShujaKhalid/ec2-a1" class="button scrolly">Code</a> </p>
-			            <p class="lead"> <a href="https://github.com/ShujaKhalid/ec2-a1/blob/master/README_ec2.pdf" class="button scrolly">Final Report</a> </p>
-			            <p class="lead"> <i>Application Architecture</i> </p>
-						<img src="https://s3.amazonaws.com/sk-portfolio/ec2_arch.PNG">
-			            <p class="lead"> <i>Lessons Learned</i> </p>
-			            <p> 
-			            Lots of lessons learned about working with EC2 servers none more important then 'stopping' your server before you go to bed. That is how I lost ~$70 worth of AWS credits :(.
-			            </p>
-			          </main>
-					</section>
-
-					<section id="lambda" class="three">
-			          <main role="main" class="inner cover">
-			            <h2 class="cover-heading">Amazon Web Services (Lambda) - Web Application</h2>
-			            <p class="lead"><i>Background</i></p>
-			            As part of the curriculum for ECE1779 (Introduction to Cloud Computing), students were tasked with creating a web-application using AWS Lambda. The project that I worked on is called Majority Rules!
-			            and is something that I had been thinking of incorporating for quite some time. The application is a social networking web-applicaiton that aims to decrease the divide that exists among individuals by generating constructive discussion. Users are then given the option to voice their approval or disapproval on issues. The results of the tallies is important as they give the world a sense of how the majority of the public feels about issues that have global consequences.
-			            <p class="lead"> <a href="https://github.com/ShujaKhalid/lambda-a2" class="button scrolly">Code</a> </p>
-			            <p class="lead"> <a href="https://github.com/ShujaKhalid/lambda-a2/blob/master/README_lambda.pdf" class="button scrolly">Final Report</a> </p>
-						<p class="lead"> <i>Application Architecture</i></p>
-						<img src="https://s3.amazonaws.com/sk-portfolio/lambda_arch.PNG">
-						<p class="lead"> <i>Application Snapshot</i></p>
-						<img src="https://s3.amazonaws.com/sk-portfolio/lambda.png">
-			            <p class="lead"> <a href="https://46siqm4gvj.execute-api.us-east-1.amazonaws.com/dev" class="button scrolly">Take me there!</a> </p>
-			   			<p class="lead"> <i>Lessons Learned</i> </p>
-			   			Incorporating the web-application using AWS Lambda was a painless task. I would highly recommend it to anyone who wishes to launch their own web-application. Operating costs are also minimal.
-			          </main>
-					</section>
-					<section id="tstory" class="three">
-			          <main role="main" class="inner cover">
-			            <h2 class="cover-heading">Trip Story!</h2>
-			            <p class="lead"><i>Background</i></p>
-			            <p>
-			            The aim of the project- ‘Trip Story’ is to create a Rebus Story (picture story) App that allows children to form their personalized stories by answering a series of questions. These questions are designed to be engaging and test the user’s (children age: 4+) creativity. The App provides a platform for the child to create their own stories with assistance from the parent. Upon making the correct selection, the story would continue and finally the story formed will be portrayed in the form of a Rebus story.
-						The ‘Rebus story’ concept aims to promote early literacy by motivating children to participate in storytelling while also improving cognitive skills.
-			            </p>
-			            <p class="lead"> <a href="https://github.com/ShujaKhalid/TripStory" class="button scrolly">Code</a> </p>
-			            <p class="lead"> <a href="http://www.eecg.utoronto.ca/~jayar/ece1778/tripstory.pdf" class="button scrolly">Final Report</a> </p>
-						<div class="not-first-item graphic-container wide center">
-								<div class="Movie graphic">
-									<div class="figure-content">
-										<!-- sandvox.YouTubeElement -->
-										<div class="YouTubeElement" mute=1>
-											<div class="video" mute=1>
-												<iframe allowFullScreen="true" frameborder="0" id="youtube3" mozallowfullscreen="true" src="//www.youtube.com/embed/OmZcDVowSQA?rel=0" title="YouTube video player" webkitAllowFullScreen="true" width="600" height="337" class="graphic"></iframe>
-											</div>
-										</div>
-										<!-- /sandvox.YouTubeElement -->
-									</div>
-								</div>
-						</div>
-
-						<p class="lead"> <i>Application Architecture</i> </p>
-						<img src="https://s3.amazonaws.com/sk-portfolio/tstory_arch.PNG">
-						<p class="lead"> <i>Application Snapshot</i> </p>
-						<img src="https://s3.amazonaws.com/sk-portfolio/tstory.png">
-						<p class="lead"> <i>Lessons Learned</i> </p>
-						<p>
-						During the development of the code it became apparent that the use of Realm and online
-						storage was essential for the purposes of this app because of the length of the story (15
-						frames) to extend it beyond the existing theme (Underwater Adventure). After some
-						deliberation we decided to further learn about the aforementioned tools for this project.
-						In hindsight, this type of application could have also be developed using a cross platform
-						software, such as Phone Gap. Animation could have been incorporated using JavaScript,
-						activity pages replaced with HTML pages and the data would still be stored in Realm and
-						Firebase.
-						</p>
-			          </main>
-
-					</section>
-<!-- 					<section id="about" class="three">
-
-
-					</section> -->
-
-				<!-- About Me -->
-					<section id="about" class="four">
-						<div class="container">
-
-							<header>
-								<h2>About Me</h2>
-							</header>
-
-							<a href="#" class="image featured"><img src="images/pic08.jpg" alt="" /></a>
-
-							<p>I am currently pursuing a PhD at the University of Toronto with a focus on computer vision and machine learning technologies</p>
-
-							<p>I am also working on a website dedicated to using machine learning and computer vision tools to quantify player performance:</p>
-
-							<a href='http://gmaiplaybook.com'><strong> http://gmaiplaybook.com </strong></a>
-							<p>	</p>
-							<p> <i>Feedback is welcome!</i> </p>
-
-						</div>
-					</section>
-
-					<!-- Contact -->
-					<section class="mbr-section mbr-section__comments" id="facebook-comments-block-t" data-rv-view="26" style="background-color: rgb(255, 255, 255); padding-top: 0rem; padding-bottom: 0rem;">
-					         
-					    <div class="mbr-section__container mbr-section__container--isolated addons-container">
-					        <div class="addons-row">
-					            <div class="addons-container-inner"><div class="facebookPlaceholder" data-numposts="5"><h2>FACEBOOK COMMENTS WILL BE SHOWN ONLY WHEN YOUR SITE IS ONLINE</h2> <img src="https://s3.amazonaws.com/gmaiplaybook/facebook-comments.jpg"></div></div>
-					            
-					           
-					        </div>
-					    </div>
-					</section>
-
+			<div class="entry">
+				<div class="thumb"><img src="images/classify.jpg" alt="Traffic sign classification" /></div>
+				<div class="meta">
+					<h3>Traffic Sign Classification</h3>
+					<p class="tags">Deep Learning · TensorFlow · LeNet</p>
+					<p>A LeNet-style CNN that classifies German traffic signs with ~95% test accuracy, rising to ~99% with data augmentation (flips, rotations) used to balance a non-uniform dataset.</p>
+					<div class="actions">
+						<a href="https://github.com/ShujaKhalid/Computer-Vision-TrafficSignClassifier">Code</a>
+					</div>
+				</div>
 			</div>
 
-		<!-- Footer -->
-			<div id="footer">
-
-				<!-- Copyright -->
-					<ul class="copyright">
-<!-- 						<li>&copy; Untitled. All rights reserved.</li>
- -->						<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-					</ul>
-
+			<div class="entry">
+				<div class="thumb"><img src="images/solidWhiteRight.jpg" alt="Lane detection" /></div>
+				<div class="meta">
+					<h3>Lane Detection Algorithm</h3>
+					<p class="tags">Computer Vision · OpenCV</p>
+					<p>A first lane-finding pipeline combining thresholding techniques with OpenCV to detect lanes in images and video — an exploration of how environmental conditions and region-of-interest choices affect detection robustness.</p>
+					<div class="actions">
+						<a href="https://github.com/ShujaKhalid/Computer-Vision-LaneFindingAlgorithm">Code</a>
+						<a href="https://s3.amazonaws.com/sk-portfolio/solidWhiteRight.mp4">Demo</a>
+					</div>
+				</div>
 			</div>
 
+			<div class="entry">
+				<div class="thumb"><img src="https://s3.amazonaws.com/gmaiplaybook/par2.png" alt="Player Availability Rating" /></div>
+				<div class="meta">
+					<h3>Player Availability Rating (PAR)</h3>
+					<p class="tags">Sports Analytics · Regression · Web Scraping</p>
+					<p>A tool for quantifying NHL skater performance for general managers, addressing gaps in how player availability and physical attributes are reflected in conventional statistics. Built with web-scraped data and tuned regression models.</p>
+					<div class="actions">
+						<a href="http://gmaiplaybook.com/">Website</a>
+						<a href="https://s3.amazonaws.com/gmaiplaybook/paper.pdf">Paper</a>
+					</div>
+				</div>
+			</div>
 
+			<div class="entry">
+				<div class="thumb"><img src="images/tstory.png" alt="Trip Story app" /></div>
+				<div class="meta">
+					<h3>Trip Story</h3>
+					<p class="tags">Mobile · iOS · Realm / Firebase</p>
+					<p>A rebus (picture) story app that lets children build personalized stories by answering creativity-testing questions, promoting early literacy and cognitive skills through interactive storytelling.</p>
+					<div class="actions">
+						<a href="https://github.com/ShujaKhalid/TripStory">Code</a>
+						<a href="http://www.eecg.utoronto.ca/~jayar/ece1778/tripstory.pdf">Report</a>
+						<a href="//www.youtube.com/embed/OmZcDVowSQA?rel=0">Demo</a>
+					</div>
+				</div>
+			</div>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-  			<script src="https://s3.amazonaws.com/gmaiplaybook/bootstrap.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/jquery.scrollzer.min.js"></script>
-			<script src="assets/js/skel.min.js"></script>
-			<script src="assets/js/util.js"></script>
-		    <script src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5"></script>
-		    <script src="https://apis.google.com/js/plusone.js"></script>
-		    <script src="https://s3.amazonaws.com/gmaiplaybook/facebook-script.js"></script>
-		    <script src="https://s3.amazonaws.com/gmaiplaybook/social-likes.js"></script>
-		    <script src="https://s3.amazonaws.com/gmaiplaybook/bootstrap-carousel-swipe.js"></script>
-  			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-			<script src="assets/js/main.js"></script>
+			<div class="entry">
+				<div class="thumb"><img src="images/ec2.PNG" alt="AWS EC2 application" /></div>
+				<div class="meta">
+					<h3>Auto-Scaling Web Application on AWS EC2</h3>
+					<p class="tags">Cloud Computing · AWS · Load Balancing</p>
+					<p>A scalable cloud application that automatically adjusts capacity to fluctuating demand and applies image transformations via ImageMagick — a hands-on look at what truly elastic infrastructure requires.</p>
+					<div class="actions">
+						<a href="https://github.com/ShujaKhalid/ec2-a1">Code</a>
+						<a href="https://github.com/ShujaKhalid/ec2-a1/blob/master/README_ec2.pdf">Report</a>
+					</div>
+				</div>
+			</div>
 
+			<div class="entry">
+				<div class="thumb"><img src="images/lambda.png" alt="AWS Lambda application" /></div>
+				<div class="meta">
+					<h3>Serverless Web Application on AWS Lambda</h3>
+					<p class="tags">Cloud Computing · AWS Lambda · Serverless</p>
+					<p>"Majority Rules!" — a serverless social application that surfaces public sentiment on global issues through constructive discussion and approval/disapproval tallies, built to minimize operating cost.</p>
+					<div class="actions">
+						<a href="https://github.com/ShujaKhalid/lambda-a2">Code</a>
+						<a href="https://github.com/ShujaKhalid/lambda-a2/blob/master/README_lambda.pdf">Report</a>
+					</div>
+				</div>
+			</div>
 
-	</body>
+		</section>
+
+		<footer>
+			&copy; Shuja Khalid · University of Toronto
+		</footer>
+
+	</div>
+</body>
 </html>
