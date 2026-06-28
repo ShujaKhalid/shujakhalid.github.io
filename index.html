@@ -40,8 +40,9 @@
 		/* ---- Header ---- */
 		.header { display: flex; gap: 32px; align-items: center; flex-wrap: wrap; }
 		.photo {
-			flex: 0 0 auto; width: 136px; height: 162px; border-radius: 18px;
-			object-fit: cover; object-position: center 12%;
+			flex: 0 0 auto; width: 140px; height: 150px; border-radius: 18px;
+			background-image: url('images/headshot.jpg');
+			background-repeat: no-repeat; background-size: 215%; background-position: 50% 6%;
 			border: 1px solid var(--line); box-shadow: 0 14px 34px rgba(15,23,42,0.16);
 		}
 		.intro { flex: 1 1 340px; }
@@ -197,7 +198,7 @@
 
 		<!-- ===== Header ===== -->
 		<header class="header">
-			<img class="photo" src="images/headshot.jpg" alt="Shuja Khalid" />
+			<div class="photo" role="img" aria-label="Shuja Khalid"></div>
 			<div class="intro">
 				<h1>Shuja Khalid</h1>
 				<p class="role"><strong>Senior Research Scientist</strong>, Huawei Canada &nbsp;·&nbsp; PhD, University of Toronto</p>
@@ -240,11 +241,6 @@
 							</div>
 							<div class="when">Sept 2023 – Present</div>
 						</div>
-						<ul class="pts">
-							<li>Accelerated 3D Gaussian Splatting training and inference pipelines using CUDA and Vulkan (via Slang).</li>
-							<li>Accelerated LLM inference on DeepSeek models.</li>
-							<li>Completed 4 patent applications and 2 publications (CVPR and ICLR).</li>
-						</ul>
 					</div>
 				</li>
 				<li>
@@ -257,10 +253,6 @@
 							</div>
 							<div class="when"></div>
 						</div>
-						<ul class="pts">
-							<li>Mentored 6 startup ventures to ensure technical excellence and alignment with industry best practices.</li>
-							<li>Advised on architecture design, technology selection, and scalability strategies.</li>
-						</ul>
 					</div>
 				</li>
 				<li>
@@ -285,12 +277,6 @@
 							</div>
 							<div class="when">May 2018 – Sept 2023</div>
 						</div>
-						<ul class="pts">
-							<li>Developed an explainable, statistically-driven algorithm for assessing surgical performance.</li>
-							<li>Deployed an auto-scaling EC2 cluster for running inference with machine learning models.</li>
-							<li>Created 3D representations of the surgical field of view using Neural Radiance Fields (NeRFs).</li>
-							<li>Generated synthetic image datasets using generative models.</li>
-						</ul>
 					</div>
 				</li>
 				<li>
