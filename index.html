@@ -4,36 +4,31 @@
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<title>Shuja Khalid</title>
-	<meta name="description" content="Shuja Khalid — Senior Research Scientist (Huawei Canada) and PhD, University of Toronto. Machine learning and computer vision: 3D Gaussian splatting, neural rendering, representation learning, and AI for healthcare." />
+	<meta name="description" content="Shuja Khalid — Senior Research Scientist (Huawei Canada) and PhD, University of Toronto. Machine learning and computer vision: 3D Gaussian splatting, neural rendering, foundation models, and AI for healthcare." />
 	<meta property="og:title" content="Shuja Khalid" />
 	<meta property="og:description" content="Senior Research Scientist working on 3D vision, neural rendering, and AI for healthcare." />
-	<meta name="theme-color" content="#0f172a" />
+	<meta property="og:image" content="images/headshot.jpg" />
+	<meta name="theme-color" content="#ffffff" />
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Inter:wght@400;450;500;600;700&display=swap" rel="stylesheet">
 	<style>
 		:root {
-			--ink: #15181d;
-			--soft: #4a5159;
+			--ink: #14171c;
+			--soft: #474e57;
 			--muted: #7b828b;
 			--accent: #2563c9;
 			--accent-soft: #eef3fc;
-			--line: #e9ebee;
+			--line: #e8eaee;
 			--card: #ffffff;
-			--chip: #f3f5f8;
+			--chip: #f2f5f9;
+			--bg: #ffffff;
 			--max: 820px;
-		}
-		@media (prefers-color-scheme: dark) {
-			:root {
-				--ink: #e7e9ec; --soft: #b7bdc6; --muted: #8b939e;
-				--accent: #7ba7f0; --accent-soft: #16223a;
-				--line: #262b33; --card: #15181d; --chip: #1d222a; --bg: #0e1014;
-			}
 		}
 		* { box-sizing: border-box; }
 		html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
 		body {
-			margin: 0; background: var(--bg, #fff); color: var(--ink);
+			margin: 0; background: var(--bg); color: var(--ink);
 			font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 			font-size: 16px; line-height: 1.6; -webkit-font-smoothing: antialiased;
 		}
@@ -43,20 +38,18 @@
 		h1, h2, h3 { font-family: 'Newsreader', Georgia, serif; font-weight: 600; line-height: 1.2; letter-spacing: -0.01em; }
 
 		/* ---- Header ---- */
-		.header { display: flex; gap: 30px; align-items: center; flex-wrap: wrap; }
-		.avatar {
-			flex: 0 0 auto; width: 128px; height: 128px; border-radius: 22px;
-			background: linear-gradient(150deg, #3b82f6 0%, #1e3a8a 55%, #0f172a 100%);
-			color: #fff; display: flex; align-items: center; justify-content: center;
-			font-family: 'Newsreader', serif; font-size: 44px; font-weight: 600; letter-spacing: 1px;
-			box-shadow: 0 10px 30px rgba(30,58,138,0.28);
+		.header { display: flex; gap: 32px; align-items: center; flex-wrap: wrap; }
+		.photo {
+			flex: 0 0 auto; width: 136px; height: 162px; border-radius: 18px;
+			object-fit: cover; object-position: center 12%;
+			border: 1px solid var(--line); box-shadow: 0 14px 34px rgba(15,23,42,0.16);
 		}
 		.intro { flex: 1 1 340px; }
-		.intro h1 { margin: 0 0 6px; font-size: 34px; }
+		.intro h1 { margin: 0 0 6px; font-size: 35px; }
 		.intro .role { margin: 0; font-size: 16px; color: var(--soft); }
 		.intro .role strong { color: var(--ink); font-weight: 600; }
 		.intro .where { margin: 4px 0 0; font-size: 14.5px; color: var(--muted); }
-		.links { margin-top: 14px; display: flex; flex-wrap: wrap; gap: 8px; }
+		.links { margin-top: 15px; display: flex; flex-wrap: wrap; gap: 8px; }
 		.links a {
 			display: inline-flex; align-items: center; gap: 6px;
 			padding: 6px 12px; border: 1px solid var(--line); border-radius: 999px;
@@ -84,11 +77,32 @@
 		.bio p:last-child { margin-bottom: 0; }
 		.bio a { font-weight: 500; }
 
-		/* ---- Interest chips ---- */
-		.chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+		/* ---- Skills / interest chips ---- */
+		.skillgroup { margin-bottom: 14px; }
+		.skillgroup:last-child { margin-bottom: 0; }
+		.skillgroup .gl { font-size: 12px; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); margin-bottom: 8px; }
+		.chips { display: flex; flex-wrap: wrap; gap: 8px; }
 		.chip { font-size: 13px; padding: 5px 12px; border-radius: 8px; background: var(--chip); color: var(--soft); }
+		.chip.key { background: var(--accent-soft); color: var(--accent); font-weight: 500; }
 
-		/* ---- CV items (experience / education) ---- */
+		/* ---- Experience ---- */
+		.xp { list-style: none; padding: 0; margin: 0; }
+		.xp > li { display: flex; gap: 16px; align-items: flex-start; padding: 20px 0; border-bottom: 1px solid var(--line); }
+		.xp > li:last-child { border-bottom: none; }
+		.xp .logo {
+			flex: 0 0 auto; width: 48px; height: 48px; border-radius: 11px; background: #fff;
+			border: 1px solid var(--line); padding: 7px; object-fit: contain; margin-top: 2px;
+		}
+		.xp .body { flex: 1 1 auto; min-width: 0; }
+		.xp .head { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; align-items: baseline; }
+		.xp .r { font-weight: 600; color: var(--ink); font-size: 16px; }
+		.xp .o { color: var(--soft); font-size: 14.5px; margin-top: 1px; }
+		.xp .o .place { color: var(--muted); }
+		.xp .when { color: var(--muted); font-size: 13.5px; font-variant-numeric: tabular-nums; white-space: nowrap; }
+		.xp ul.pts { margin: 10px 0 0; padding-left: 18px; }
+		.xp ul.pts li { color: var(--soft); font-size: 14px; line-height: 1.55; padding: 1px 0; }
+
+		/* ---- Education (compact) ---- */
 		.cv { list-style: none; padding: 0; margin: 0; }
 		.cv li { display: flex; gap: 16px; align-items: center; padding: 15px 0; border-bottom: 1px solid var(--line); }
 		.cv li:last-child { border-bottom: none; }
@@ -157,6 +171,8 @@
 		.list .d { color: var(--muted); font-size: 13.5px; margin-top: 3px; }
 		.list .d .me { color: var(--soft); font-weight: 600; }
 
+		.teaching { color: var(--soft); font-size: 16px; margin: 0; }
+
 		footer {
 			margin-top: 64px; padding-top: 22px; border-top: 1px solid var(--line);
 			color: var(--muted); font-size: 13px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px;
@@ -164,7 +180,8 @@
 
 		@media (max-width: 620px) {
 			.wrap { padding: 36px 18px 64px; }
-			.avatar { width: 92px; height: 92px; font-size: 32px; border-radius: 18px; }
+			.header { gap: 22px; }
+			.photo { width: 110px; height: 132px; }
 			.intro h1 { font-size: 28px; }
 			.pub { flex-direction: column; gap: 14px; padding: 16px; margin: 0 -8px; }
 			.pub .thumb { width: 100%; height: 170px; flex-basis: auto; }
@@ -180,15 +197,15 @@
 
 		<!-- ===== Header ===== -->
 		<header class="header">
-			<div class="avatar" aria-hidden="true">SK</div>
+			<img class="photo" src="images/headshot.jpg" alt="Shuja Khalid" />
 			<div class="intro">
 				<h1>Shuja Khalid</h1>
 				<p class="role"><strong>Senior Research Scientist</strong>, Huawei Canada &nbsp;·&nbsp; PhD, University of Toronto</p>
-				<p class="where">Toronto, Canada &nbsp;·&nbsp; Affiliate, Vector Institute &nbsp;·&nbsp; skhalid [at] cs.toronto.edu</p>
+				<p class="where">Toronto, Canada &nbsp;·&nbsp; skhalid [at] cs.toronto.edu</p>
 				<nav class="links">
 					<a href="mailto:skhalid@cs.toronto.edu">✉ Email</a>
 					<a href="https://scholar.google.ca/citations?user=1Fa69AYAAAAJ&hl=en">Google Scholar</a>
-					<a href="https://github.com/ShujaKhalid">GitHub</a>
+					<a href="https://github.com/shujakhalid">GitHub</a>
 					<a href="https://www.linkedin.com/in/shujakhalid/">LinkedIn</a>
 				</nav>
 			</div>
@@ -199,59 +216,106 @@
 			<div class="metric"><div class="num">365</div><div class="lbl">Citations</div></div>
 			<div class="metric"><div class="num">6</div><div class="lbl">h-index</div></div>
 			<div class="metric"><div class="num">4</div><div class="lbl">i10-index</div></div>
-			<div class="metric"><div class="num">3</div><div class="lbl">Patents</div></div>
+			<div class="metric"><div class="num">4</div><div class="lbl">Patents</div></div>
 		</div>
 
 		<!-- ===== About ===== -->
 		<section class="bio" id="about">
 			<h2>About</h2>
-			<p>I am a Senior Research Scientist at <strong>Huawei Canada</strong> in Toronto, working on 3D computer vision and neural rendering. I completed my PhD in Machine Learning at the <strong>University of Toronto</strong> (2019–2024), advised by Prof. Frank Rudzicz, where my thesis focused on self-supervised visual scene understanding using structured representations.</p>
-			<p>My current research centers on <strong>3D Gaussian splatting</strong> and neural rendering — making high-fidelity scene reconstruction more compact, efficient, and controllable. Alongside this, I have a long-standing interest in representation learning, explainable AI, and applying machine learning to healthcare, from surgical skill assessment to clinical outcome prediction.</p>
-			<div class="chips">
-				<span class="chip">3D Gaussian Splatting</span>
-				<span class="chip">Neural Rendering</span>
-				<span class="chip">Computer Vision</span>
-				<span class="chip">Representation Learning</span>
-				<span class="chip">Explainable AI</span>
-				<span class="chip">AI for Healthcare</span>
-			</div>
+			<p>I am a Senior Research Scientist at <strong>Huawei Canada</strong>, working on 3D computer vision and neural rendering. I completed my PhD in Computer Science (Computer Vision) at the <strong>University of Toronto</strong>, advised by Prof. Frank Rudzicz, where my thesis focused on self-supervised visual scene understanding using structured representations.</p>
+			<p>My current research centers on <strong>3D Gaussian splatting</strong> and neural rendering — making high-fidelity scene reconstruction more compact, efficient, and controllable — alongside accelerating foundation-model and LLM inference. I also have a long-standing interest in representation learning, explainable AI, and applying machine learning to healthcare, from surgical skill assessment to clinical outcome prediction.</p>
 		</section>
 
 		<!-- ===== Experience ===== -->
 		<section id="experience">
 			<h2>Experience</h2>
-			<ul class="cv">
+			<ul class="xp">
 				<li>
 					<img class="logo" src="images/logos/huawei.png" alt="Huawei" loading="lazy" />
 					<div class="body">
-						<div class="r">Senior Research Scientist</div>
-						<div class="o">Huawei Canada &nbsp;<span class="place">· Toronto, ON</span></div>
+						<div class="head">
+							<div>
+								<div class="r">Senior Research Scientist</div>
+								<div class="o">Huawei Canada &nbsp;<span class="place">· Markham, ON</span></div>
+							</div>
+							<div class="when">Sept 2023 – Present</div>
+						</div>
+						<ul class="pts">
+							<li>Accelerated 3D Gaussian Splatting training and inference pipelines using CUDA and Vulkan (via Slang).</li>
+							<li>Accelerated LLM inference on DeepSeek models.</li>
+							<li>Completed 4 patent applications and 2 publications (CVPR and ICLR).</li>
+						</ul>
 					</div>
-					<div class="when">2024 – Present</div>
+				</li>
+				<li>
+					<div class="logo" style="display:flex;align-items:center;justify-content:center;font-family:'Newsreader',serif;font-weight:600;color:var(--accent);">N</div>
+					<div class="body">
+						<div class="head">
+							<div>
+								<div class="r">AI Scientist in Residence</div>
+								<div class="o">NEXT AI &nbsp;<span class="place">· Toronto, ON</span></div>
+							</div>
+							<div class="when"></div>
+						</div>
+						<ul class="pts">
+							<li>Mentored 6 startup ventures to ensure technical excellence and alignment with industry best practices.</li>
+							<li>Advised on architecture design, technology selection, and scalability strategies.</li>
+						</ul>
+					</div>
+				</li>
+				<li>
+					<img class="logo" src="images/logos/vector.png" alt="Vector Institute" loading="lazy" />
+					<div class="body">
+						<div class="head">
+							<div>
+								<div class="r">Graduate Researcher</div>
+								<div class="o">Vector Institute &nbsp;<span class="place">· Toronto, ON</span></div>
+							</div>
+							<div class="when">2019 – 2024</div>
+						</div>
+					</div>
 				</li>
 				<li>
 					<img class="logo" src="images/logos/sst.png" alt="Surgical Safety Technologies" loading="lazy" />
 					<div class="body">
-						<div class="r">Deep Learning Engineer</div>
-						<div class="o">Surgical Safety Technologies &nbsp;<span class="place">· Toronto, ON</span></div>
+						<div class="head">
+							<div>
+								<div class="r">Machine Learning Engineer</div>
+								<div class="o">Surgical Safety Technologies &nbsp;<span class="place">· Toronto, ON</span></div>
+							</div>
+							<div class="when">May 2018 – Sept 2023</div>
+						</div>
+						<ul class="pts">
+							<li>Developed an explainable, statistically-driven algorithm for assessing surgical performance.</li>
+							<li>Deployed an auto-scaling EC2 cluster for running inference with machine learning models.</li>
+							<li>Created 3D representations of the surgical field of view using Neural Radiance Fields (NeRFs).</li>
+							<li>Generated synthetic image datasets using generative models.</li>
+						</ul>
 					</div>
-					<div class="when">2020 – 2024</div>
 				</li>
 				<li>
 					<img class="logo" src="images/logos/sunnybrook.png" alt="Sunnybrook Health Sciences Centre" loading="lazy" />
 					<div class="body">
-						<div class="r">Research Engineer / Physicist</div>
-						<div class="o">Sunnybrook Health Sciences Centre &nbsp;<span class="place">· Toronto, ON</span></div>
+						<div class="head">
+							<div>
+								<div class="r">Research Engineer / Physicist</div>
+								<div class="o">Sunnybrook Health Sciences Centre &nbsp;<span class="place">· Toronto, ON</span></div>
+							</div>
+							<div class="when">2016 – 2018</div>
+						</div>
 					</div>
-					<div class="when">2018 – 2020</div>
 				</li>
 				<li>
 					<img class="logo" src="images/logos/ge.png" alt="General Electric" loading="lazy" />
 					<div class="body">
-						<div class="r">Software Engineer Intern</div>
-						<div class="o">General Electric &nbsp;<span class="place">· Peterborough, ON</span></div>
+						<div class="head">
+							<div>
+								<div class="r">Software Engineer Intern</div>
+								<div class="o">General Electric &nbsp;<span class="place">· Peterborough, ON</span></div>
+							</div>
+							<div class="when">2015 – 2016</div>
+						</div>
 					</div>
-					<div class="when">2016 – 2018</div>
 				</li>
 			</ul>
 		</section>
@@ -263,28 +327,55 @@
 				<li>
 					<img class="logo" src="images/logos/uoft.png" alt="University of Toronto" loading="lazy" />
 					<div class="body">
-						<div class="r">PhD, Machine Learning (Computer Science)</div>
+						<div class="r">PhD, Computer Science (Computer Vision)</div>
 						<div class="o">University of Toronto &nbsp;<span class="place">· advised by Prof. Frank Rudzicz</span></div>
 					</div>
-					<div class="when">2019 – 2024</div>
+					<div class="when">Sept 2019 – Mar 2024</div>
 				</li>
 				<li>
 					<img class="logo" src="images/logos/uoft.png" alt="University of Toronto" loading="lazy" />
 					<div class="body">
-						<div class="r">Master of Engineering (MEng), Electrical &amp; Computer Engineering</div>
+						<div class="r">MScAC, Computer Science (Machine Learning)</div>
 						<div class="o">University of Toronto &nbsp;<span class="place">· Toronto, ON</span></div>
 					</div>
-					<div class="when">2017 – 2018</div>
+					<div class="when">Sept 2017 – June 2019</div>
 				</li>
 				<li>
-					<div class="logo" style="display:flex;align-items:center;justify-content:center;font-family:'Newsreader',serif;font-weight:600;color:var(--muted);">B</div>
+					<img class="logo" src="images/logos/uoft.png" alt="University of Toronto" loading="lazy" />
 					<div class="body">
-						<div class="r">Bachelor's Degree, Engineering</div>
-						<div class="o">Undergraduate institution &nbsp;<span class="place">· please confirm</span></div>
+						<div class="r">BASc, Mechanical Engineering (Robotics)</div>
+						<div class="o">University of Toronto &nbsp;<span class="place">· Toronto, ON</span></div>
 					</div>
-					<div class="when">2011 – 2016</div>
+					<div class="when">Sept 2011 – June 2016</div>
 				</li>
 			</ul>
+		</section>
+
+		<!-- ===== Skills ===== -->
+		<section id="skills">
+			<h2>Technical Skills</h2>
+			<div class="skillgroup">
+				<div class="gl">Languages</div>
+				<div class="chips">
+					<span class="chip">Python</span><span class="chip">C++</span><span class="chip">CUDA</span>
+					<span class="chip">JavaScript</span><span class="chip">SQL</span>
+				</div>
+			</div>
+			<div class="skillgroup">
+				<div class="gl">Frameworks &amp; Systems</div>
+				<div class="chips">
+					<span class="chip">PyTorch</span><span class="chip">JAX</span><span class="chip">TensorFlow</span>
+					<span class="chip">Vulkan</span><span class="chip">AWS</span>
+				</div>
+			</div>
+			<div class="skillgroup">
+				<div class="gl">Research</div>
+				<div class="chips">
+					<span class="chip key">3D Computer Vision</span><span class="chip key">Foundation Models</span>
+					<span class="chip key">LLMs</span><span class="chip key">Diffusion Models</span>
+					<span class="chip key">Flow Matching</span>
+				</div>
+			</div>
 		</section>
 
 		<!-- ===== News ===== -->
@@ -293,7 +384,8 @@
 			<ul class="news">
 				<li><span class="date">2026</span><span class="what"><strong>LatentGS</strong> accepted to <strong>ICLR 2026</strong> — probabilistic densification for efficient, compact, and faster 3D Gaussian splatting.</span></li>
 				<li><span class="date">2025</span><span class="what"><strong>GaussianVAE</strong> presented at <strong>CVPR 2025</strong> — adaptive learning dynamics of 3D Gaussians for high-fidelity super-resolution.</span></li>
-				<li><span class="date">2024</span><span class="what">Completed my <strong>PhD in Machine Learning</strong> at the University of Toronto and joined Huawei Canada as a Senior Research Scientist.</span></li>
+				<li><span class="date">2024</span><span class="what">Completed my <strong>PhD in Computer Science</strong> at the University of Toronto.</span></li>
+				<li><span class="date">2023</span><span class="what">Joined <strong>Huawei Canada</strong> as a Senior Research Scientist, working on 3D vision and LLM acceleration.</span></li>
 			</ul>
 		</section>
 
@@ -322,22 +414,22 @@
 			</article>
 
 			<article class="pub">
-				<a class="thumb" href="https://arxiv.org/abs/2303.08695"><img src="images/papers/refinerf.png" alt="RefiNeRF camera-pose recovery" loading="lazy" /></a>
+				<a class="thumb" href="https://arxiv.org/abs/2303.08695"><img src="images/papers/refinerf.png" alt="refiNeRF camera-pose recovery" loading="lazy" /></a>
 				<div class="meta">
-					<h3><a href="https://arxiv.org/abs/2303.08695">RefiNeRF: Modelling Dynamic Neural Radiance Fields with Inconsistent or Missing Camera Parameters</a></h3>
+					<h3><a href="https://arxiv.org/abs/2303.08695">refiNeRF: An Extensible Approach for Refining Erroneous COLMAP Predictions</a></h3>
 					<p class="authors"><span class="me">S. Khalid</span>, F. Rudzicz</p>
 					<div class="venue-row"><span class="badge hl">WACV 2024</span><span class="year">Pose-free dynamic NeRF</span></div>
-					<div class="plinks"><a href="https://arxiv.org/abs/2303.08695">arXiv</a><a href="https://arxiv.org/pdf/2303.08695">PDF</a><span class="cited">Cited by 0</span></div>
+					<div class="plinks"><a href="https://arxiv.org/abs/2303.08695">arXiv</a><a href="https://arxiv.org/pdf/2303.08695">PDF</a></div>
 				</div>
 			</article>
 
 			<article class="pub">
 				<a class="thumb" href="https://arxiv.org/abs/2209.10399"><img src="images/papers/wildnerf.png" alt="wildNeRF dynamic scene synthesis" loading="lazy" /></a>
 				<div class="meta">
-					<h3><a href="https://arxiv.org/abs/2209.10399">wildNeRF: Complete View Synthesis of In-the-Wild Dynamic Scenes from Sparse Monocular Data</a></h3>
+					<h3><a href="https://arxiv.org/abs/2209.10399">wildNeRF: Novel View Synthesis of In-the-Wild Dynamic Scenes Captured Using Sparse Monocular Data</a></h3>
 					<p class="authors"><span class="me">S. Khalid</span>, F. Rudzicz</p>
 					<div class="venue-row"><span class="badge">arXiv</span><span class="year">Self-supervised dynamic NeRF</span></div>
-					<div class="plinks"><a href="https://arxiv.org/abs/2209.10399">arXiv</a><a href="https://arxiv.org/pdf/2209.10399">PDF</a><span class="cited">Cited by 0</span></div>
+					<div class="plinks"><a href="https://arxiv.org/abs/2209.10399">arXiv</a><a href="https://arxiv.org/pdf/2209.10399">PDF</a></div>
 				</div>
 			</article>
 
@@ -369,12 +461,16 @@
 					<div class="d">F. Z. Wang, Z. Chen, <span class="me">S. Khalid</span>, E. Mandelcorn, T. Felfeli · Investigative Ophthalmology &amp; Visual Science (ARVO), 2025 · Cited by 0</div>
 				</li>
 				<li>
-					<div class="t"><a href="https://arxiv.org/abs/2303.08695">RefiNeRF: Modelling Dynamic Neural Radiance Fields with Inconsistent or Missing Camera Parameters</a></div>
+					<div class="t"><a href="https://arxiv.org/abs/2303.08695">refiNeRF: An Extensible Approach for Refining Erroneous COLMAP Predictions</a></div>
 					<div class="d"><span class="me">S. Khalid</span>, F. Rudzicz · WACV 2024 · Cited by 0</div>
 				</li>
 				<li>
 					<div class="t">Self-Supervised Visual Scene Understanding Using Structured Representations for Surgical Applications</div>
 					<div class="d"><span class="me">S. Khalid</span> · PhD Thesis, University of Toronto, 2024 · Cited by 9</div>
+				</li>
+				<li>
+					<div class="t">OR Vision: Objective, Explainable Assessment of Surgical Skill with Deep Learning</div>
+					<div class="d"><span class="me">S. Khalid</span>, et al. · Preprint</div>
 				</li>
 				<li>
 					<div class="t">Assessment of the Predictive Value of Artificial Intelligence for Ophthalmic Diseases Using Electronic Health Records: A Systematic Review and Meta-Analysis</div>
@@ -385,7 +481,7 @@
 					<div class="d">A. Namavarian, A. Gabinet-Equihua, Y. Deng, <span class="me">S. Khalid</span>, et al. · The Laryngoscope, 2024 · Cited by 5</div>
 				</li>
 				<li>
-					<div class="t"><a href="https://arxiv.org/abs/2209.10399">wildNeRF: Complete View Synthesis of In-the-Wild Dynamic Scenes from Sparse Monocular Data</a></div>
+					<div class="t"><a href="https://arxiv.org/abs/2209.10399">wildNeRF: Novel View Synthesis of In-the-Wild Dynamic Scenes Captured Using Sparse Monocular Data</a></div>
 					<div class="d"><span class="me">S. Khalid</span>, F. Rudzicz · arXiv, 2023 · Cited by 0</div>
 				</li>
 				<li>
@@ -419,7 +515,17 @@
 					<div class="t"><a href="https://patents.google.com/patent/US20230419503A1">System and Method for Operating Room Human Traffic Monitoring</a></div>
 					<div class="d">F. Rudzicz, A. Chaudhry, <span class="me">S. Khalid</span>, T. Li, T. Grantcharov · US Patent App. US20230419503A1, 2022 · Cited by 1</div>
 				</li>
+				<li>
+					<div class="t"><a href="https://patents.google.com/patent/US20230409749A1">Systems and Methods for Configuring and Operating De-Identification Systems</a></div>
+					<div class="d"><span class="me">S. Khalid</span>, et al. · US Patent App. US20230409749A1, 2023</div>
+				</li>
 			</ul>
+		</section>
+
+		<!-- ===== Teaching ===== -->
+		<section id="teaching">
+			<h2>Teaching</h2>
+			<p class="teaching">Teaching Assistant at the University of Toronto for courses in machine learning, deep learning, natural language processing, computer vision, and web development.</p>
 		</section>
 
 		<footer>
