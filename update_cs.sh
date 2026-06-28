@@ -5,3 +5,4 @@
 # live in images/, so copy both.
 scp -p index.html skhalid@cs.toronto.edu:/u/skhalid/public_html/
 scp -pr images skhalid@cs.toronto.edu:/u/skhalid/public_html/
+scp -pr data skhalid@cs.toronto.edu:/u/skhalid/public_html/

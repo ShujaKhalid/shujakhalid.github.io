@@ -1,0 +1,21 @@
+{
+  "updated": "2026-06-27",
+  "citations": 365,
+  "hindex": 6,
+  "i10index": 4,
+  "papers": {
+    "Evaluation of deep learning models for identifying surgical actions and measuring performance": 181,
+    "Automated methods of technical skill assessment in surgery: a systematic review": 129,
+    "Systems and methods for surgical video de-identification": 12,
+    "Self-Supervised Visual Scene Understanding Using Structured Representations for Surgical Applications": 9,
+    "Assessment of predictive value of artificial intelligence for ophthalmic diseases using electronic health records: A systematic review and meta-analysis": 6,
+    "Length of Stay Prediction Models for Oral Cancer Surgery: Machine Learning, Statistical and ACS-NSQIP": 5,
+    "GaussianVAE: Adaptive Learning Dynamics of 3D Gaussians for High-Fidelity Super-Resolution": 3,
+    "Advances in prediction of readmission rates using long term short term memory networks on healthcare insurance data": 2,
+    "LatentGS: Probabilistic Densification for Efficient, Compact, and Faster 3D Gaussian Splatting": 1,
+    "System and method for operating room human traffic monitoring": 1,
+    "wildNeRF: Novel view synthesis of in-the-wild dynamic scenes using sparse monocular data": 0,
+    "RefiNeRF: Modelling dynamic neural radiance fields with inconsistent or missing camera parameters": 0,
+    "Application of semantic segmentation models to quantify ellipsoid zone abnormalities detected with en-face optical coherence tomography imaging in uveitis patients": 0
+  }
+}

@@ -42,7 +42,7 @@
 		.photo {
 			flex: 0 0 auto; width: 140px; height: 150px; border-radius: 18px;
 			background-image: url('images/headshot.jpg');
-			background-repeat: no-repeat; background-size: 215%; background-position: 50% 6%;
+			background-repeat: no-repeat; background-size: 195%; background-position: 50% 0%;
 			border: 1px solid var(--line); box-shadow: 0 14px 34px rgba(15,23,42,0.16);
 		}
 		.intro { flex: 1 1 340px; }
@@ -67,6 +67,7 @@
 		}
 		.metric .num { font-family: 'Newsreader', serif; font-size: 26px; font-weight: 600; color: var(--ink); line-height: 1; }
 		.metric .lbl { font-size: 12px; color: var(--muted); margin-top: 5px; text-transform: uppercase; letter-spacing: .06em; }
+		.synced { margin: 10px 2px 0; font-size: 12px; color: var(--muted); }
 
 		/* ---- Sections ---- */
 		section { margin-top: 50px; }
@@ -214,11 +215,12 @@
 
 		<!-- ===== Metrics ===== -->
 		<div class="metrics" aria-label="Citation metrics from Google Scholar">
-			<div class="metric"><div class="num">365</div><div class="lbl">Citations</div></div>
-			<div class="metric"><div class="num">6</div><div class="lbl">h-index</div></div>
-			<div class="metric"><div class="num">4</div><div class="lbl">i10-index</div></div>
+			<div class="metric"><div class="num" data-metric="citations">365</div><div class="lbl">Citations</div></div>
+			<div class="metric"><div class="num" data-metric="hindex">6</div><div class="lbl">h-index</div></div>
+			<div class="metric"><div class="num" data-metric="i10index">4</div><div class="lbl">i10-index</div></div>
 			<div class="metric"><div class="num">4</div><div class="lbl">Patents</div></div>
 		</div>
+		<p class="synced" data-updated>Citation metrics from Google Scholar · auto-updated daily</p>
 
 		<!-- ===== About ===== -->
 		<section class="bio" id="about">
@@ -248,10 +250,10 @@
 					<div class="body">
 						<div class="head">
 							<div>
-								<div class="r">AI Scientist in Residence</div>
-								<div class="o">NEXT AI &nbsp;<span class="place">· Toronto, ON</span></div>
+								<div class="r">AI Research Scientist</div>
+								<div class="o">Next AI &nbsp;<span class="place">· Contract · Toronto, ON · Hybrid</span></div>
 							</div>
-							<div class="when"></div>
+							<div class="when">Feb 2024 – Aug 2024 · 7 mos</div>
 						</div>
 					</div>
 				</li>
@@ -385,7 +387,7 @@
 					<h3><a href="https://openreview.net/forum?id=5Dgcw1qhXq">LatentGS: Probabilistic Densification for Efficient, Compact, and Faster 3D Gaussian Splatting</a></h3>
 					<p class="authors"><span class="me">S. Khalid</span>, M. Ibrahim, Y. Liu</p>
 					<div class="venue-row"><span class="badge hl">ICLR 2026</span><span class="year">Neural rendering · variational densification</span></div>
-					<div class="plinks"><a href="https://openreview.net/forum?id=5Dgcw1qhXq">OpenReview</a><a href="https://openreview.net/pdf?id=5Dgcw1qhXq">PDF</a><span class="cited">Cited by 1</span></div>
+					<div class="plinks"><a href="https://openreview.net/forum?id=5Dgcw1qhXq">OpenReview</a><a href="https://openreview.net/pdf?id=5Dgcw1qhXq">PDF</a><span class="cited" data-scholar="LatentGS: Probabilistic Densification for Efficient, Compact, and Faster 3D Gaussian Splatting">Cited by 1</span></div>
 				</div>
 			</article>
 
@@ -395,7 +397,7 @@
 					<h3><a href="https://arxiv.org/abs/2506.07897">GaussianVAE: Adaptive Learning Dynamics of 3D Gaussians for High-Fidelity Super-Resolution</a></h3>
 					<p class="authors"><span class="me">S. Khalid</span>, M. Ibrahim, Y. Liu</p>
 					<div class="venue-row"><span class="badge hl">CVPR 2025</span><span class="year">Real-time 3DGS super-resolution</span></div>
-					<div class="plinks"><a href="https://arxiv.org/abs/2506.07897">arXiv</a><a href="https://arxiv.org/pdf/2506.07897">PDF</a><span class="cited">Cited by 3</span></div>
+					<div class="plinks"><a href="https://arxiv.org/abs/2506.07897">arXiv</a><a href="https://arxiv.org/pdf/2506.07897">PDF</a><span class="cited" data-scholar="GaussianVAE: Adaptive Learning Dynamics of 3D Gaussians for High-Fidelity Super-Resolution">Cited by 3</span></div>
 				</div>
 			</article>
 
@@ -405,7 +407,7 @@
 					<h3><a href="https://arxiv.org/abs/2303.08695">refiNeRF: An Extensible Approach for Refining Erroneous COLMAP Predictions</a></h3>
 					<p class="authors"><span class="me">S. Khalid</span>, F. Rudzicz</p>
 					<div class="venue-row"><span class="badge hl">WACV 2024</span><span class="year">Pose-free dynamic NeRF</span></div>
-					<div class="plinks"><a href="https://arxiv.org/abs/2303.08695">arXiv</a><a href="https://arxiv.org/pdf/2303.08695">PDF</a></div>
+					<div class="plinks"><a href="https://arxiv.org/abs/2303.08695">arXiv</a><a href="https://arxiv.org/pdf/2303.08695">PDF</a><span class="cited" data-scholar="RefiNeRF: Modelling dynamic neural radiance fields with inconsistent or missing camera parameters">Cited by 0</span></div>
 				</div>
 			</article>
 
@@ -415,7 +417,7 @@
 					<h3><a href="https://arxiv.org/abs/2209.10399">wildNeRF: Novel View Synthesis of In-the-Wild Dynamic Scenes Captured Using Sparse Monocular Data</a></h3>
 					<p class="authors"><span class="me">S. Khalid</span>, F. Rudzicz</p>
 					<div class="venue-row"><span class="badge">arXiv</span><span class="year">Self-supervised dynamic NeRF</span></div>
-					<div class="plinks"><a href="https://arxiv.org/abs/2209.10399">arXiv</a><a href="https://arxiv.org/pdf/2209.10399">PDF</a></div>
+					<div class="plinks"><a href="https://arxiv.org/abs/2209.10399">arXiv</a><a href="https://arxiv.org/pdf/2209.10399">PDF</a><span class="cited" data-scholar="wildNeRF: Novel view synthesis of in-the-wild dynamic scenes using sparse monocular data">Cited by 0</span></div>
 				</div>
 			</article>
 
@@ -425,7 +427,7 @@
 					<h3><a href="https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2763474">Evaluation of Deep Learning Models for Identifying Surgical Actions and Measuring Performance</a></h3>
 					<p class="authors"><span class="me">S. Khalid</span>, M. Goldenberg, T. Grantcharov, B. Taati, F. Rudzicz</p>
 					<div class="venue-row"><span class="badge">JAMA Network Open</span><span class="badge star">★ Most cited</span></div>
-					<div class="plinks"><a href="https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2763474">Article</a><a href="https://doi.org/10.1001/jamanetworkopen.2020.1664">DOI</a><span class="cited">Cited by 181</span></div>
+					<div class="plinks"><a href="https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2763474">Article</a><a href="https://doi.org/10.1001/jamanetworkopen.2020.1664">DOI</a><span class="cited" data-scholar="Evaluation of deep learning models for identifying surgical actions and measuring performance">Cited by 181</span></div>
 				</div>
 			</article>
 		</section>
@@ -520,5 +522,30 @@
 		</footer>
 
 	</div>
+
+	<!-- Pull the latest citation numbers (refreshed daily by a GitHub Action). -->
+	<script>
+	(function () {
+		function norm(s) { return (s || '').toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim(); }
+		fetch('data/scholar.json', { cache: 'no-store' })
+			.then(function (r) { return r.ok ? r.json() : null; })
+			.then(function (d) {
+				if (!d) return;
+				['citations', 'hindex', 'i10index'].forEach(function (k) {
+					var el = document.querySelector('[data-metric="' + k + '"]');
+					if (el && d[k] != null) el.textContent = d[k];
+				});
+				var papers = d.papers || {}, map = {};
+				for (var t in papers) { map[norm(t)] = papers[t]; }
+				document.querySelectorAll('[data-scholar]').forEach(function (el) {
+					var c = map[norm(el.getAttribute('data-scholar'))];
+					if (c != null) el.textContent = 'Cited by ' + c;
+				});
+				var u = document.querySelector('[data-updated]');
+				if (u && d.updated) u.textContent = 'Citation metrics from Google Scholar · last updated ' + d.updated;
+			})
+			.catch(function () {});
+	})();
+	</script>
 </body>
 </html>
