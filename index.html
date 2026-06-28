@@ -4,268 +4,321 @@
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<title>Shuja Khalid</title>
-	<meta name="description" content="Shuja Khalid — PhD Candidate in Machine Learning and Computer Vision at the University of Toronto." />
+	<meta name="description" content="Shuja Khalid — Research Scientist (Huawei Canada) and PhD, University of Toronto. Machine learning and computer vision: 3D Gaussian splatting, neural rendering, representation learning, and AI for healthcare." />
+	<meta property="og:title" content="Shuja Khalid" />
+	<meta property="og:description" content="Research Scientist working on 3D vision, neural rendering, and AI for healthcare." />
+	<meta name="theme-color" content="#0f172a" />
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Inter:wght@400;450;500;600;700&display=swap" rel="stylesheet">
 	<style>
 		:root {
-			--ink: #1a1a1a;
-			--muted: #6b6b6b;
-			--accent: #1d6fb8;
-			--line: #ececec;
+			--ink: #15181d;
+			--soft: #4a5159;
+			--muted: #7b828b;
+			--accent: #2563c9;
+			--accent-soft: #eef3fc;
+			--line: #e9ebee;
+			--card: #ffffff;
 			--bg: #ffffff;
-			--max: 760px;
+			--chip: #f3f5f8;
+			--max: 820px;
+		}
+		@media (prefers-color-scheme: dark) {
+			:root {
+				--ink: #e7e9ec; --soft: #b7bdc6; --muted: #8b939e;
+				--accent: #7ba7f0; --accent-soft: #16223a;
+				--line: #262b33; --card: #15181d; --chip: #1d222a; --bg: #0e1014;
+			}
 		}
 		* { box-sizing: border-box; }
-		html { -webkit-text-size-adjust: 100%; }
+		html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
 		body {
-			margin: 0;
-			background: var(--bg);
-			color: var(--ink);
+			margin: 0; background: var(--bg); color: var(--ink);
 			font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-			font-size: 16px;
-			line-height: 1.65;
-			-webkit-font-smoothing: antialiased;
+			font-size: 16px; line-height: 1.6; -webkit-font-smoothing: antialiased;
 		}
-		.wrap {
-			max-width: var(--max);
-			margin: 0 auto;
-			padding: 64px 24px 96px;
-		}
+		.wrap { max-width: var(--max); margin: 0 auto; padding: 56px 24px 96px; }
 		a { color: var(--accent); text-decoration: none; }
 		a:hover { text-decoration: underline; }
-		h1, h2, h3 { font-family: 'Lora', Georgia, serif; font-weight: 600; line-height: 1.25; }
+		h1, h2, h3 { font-family: 'Newsreader', Georgia, serif; font-weight: 600; line-height: 1.2; letter-spacing: -0.01em; }
 
-		/* Header */
-		.header { display: flex; gap: 32px; align-items: center; flex-wrap: wrap; }
+		/* ---- Header ---- */
+		.header { display: flex; gap: 30px; align-items: center; flex-wrap: wrap; }
 		.avatar {
-			flex: 0 0 auto;
-			width: 132px; height: 132px;
-			border-radius: 50%;
-			background: linear-gradient(135deg, #2c5364, #203a43, #0f2027);
-			color: #fff;
-			display: flex; align-items: center; justify-content: center;
-			font-family: 'Lora', serif; font-size: 46px; font-weight: 600;
-			letter-spacing: 1px;
-			box-shadow: 0 4px 18px rgba(0,0,0,0.12);
+			flex: 0 0 auto; width: 128px; height: 128px; border-radius: 22px;
+			background: linear-gradient(150deg, #3b82f6 0%, #1e3a8a 55%, #0f172a 100%);
+			color: #fff; display: flex; align-items: center; justify-content: center;
+			font-family: 'Newsreader', serif; font-size: 44px; font-weight: 600; letter-spacing: 1px;
+			box-shadow: 0 10px 30px rgba(30,58,138,0.28);
 		}
-		.intro { flex: 1 1 320px; }
-		.intro h1 { margin: 0 0 4px; font-size: 32px; }
-		.intro .role { margin: 0; color: var(--ink); font-size: 17px; }
-		.intro .affil { margin: 2px 0 0; color: var(--muted); font-size: 15px; }
-		.intro .email { margin: 6px 0 0; color: var(--muted); font-size: 15px; }
+		.intro { flex: 1 1 340px; }
+		.intro h1 { margin: 0 0 6px; font-size: 34px; }
+		.intro .role { margin: 0; font-size: 16px; color: var(--soft); }
+		.intro .role strong { color: var(--ink); font-weight: 600; }
+		.intro .where { margin: 4px 0 0; font-size: 14.5px; color: var(--muted); }
+		.links { margin-top: 14px; display: flex; flex-wrap: wrap; gap: 8px; }
+		.links a {
+			display: inline-flex; align-items: center; gap: 6px;
+			padding: 6px 12px; border: 1px solid var(--line); border-radius: 999px;
+			font-size: 13.5px; font-weight: 500; color: var(--soft); background: var(--card);
+			transition: all .15s ease;
+		}
+		.links a:hover { border-color: var(--accent); color: var(--accent); text-decoration: none; transform: translateY(-1px); }
 
-		.links { margin-top: 16px; display: flex; flex-wrap: wrap; gap: 8px 18px; font-size: 15px; }
-		.links a { color: var(--accent); }
-		.links span.sep { color: #cfcfcf; }
+		/* ---- Metrics ---- */
+		.metrics { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 26px; }
+		.metric {
+			flex: 1 1 120px; border: 1px solid var(--line); border-radius: 14px;
+			padding: 14px 16px; background: var(--card);
+		}
+		.metric .num { font-family: 'Newsreader', serif; font-size: 26px; font-weight: 600; color: var(--ink); line-height: 1; }
+		.metric .lbl { font-size: 12px; color: var(--muted); margin-top: 5px; text-transform: uppercase; letter-spacing: .06em; }
 
-		/* Sections */
-		section { margin-top: 52px; }
+		/* ---- Sections ---- */
+		section { margin-top: 50px; }
 		section > h2 {
-			font-size: 22px; margin: 0 0 18px;
-			padding-bottom: 8px; border-bottom: 1px solid var(--line);
+			font-size: 13px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase;
+			color: var(--muted); margin: 0 0 18px; font-family: 'Inter', sans-serif;
 		}
-		.bio p { margin: 0 0 14px; }
+		.bio p { margin: 0 0 14px; color: var(--soft); font-size: 16.5px; }
+		.bio p:last-child { margin-bottom: 0; }
+		.bio a { font-weight: 500; }
 
-		/* News */
+		/* ---- Interest chips ---- */
+		.chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+		.chip { font-size: 13px; padding: 5px 12px; border-radius: 8px; background: var(--chip); color: var(--soft); }
+
+		/* ---- News ---- */
 		.news { list-style: none; padding: 0; margin: 0; }
-		.news li { display: flex; gap: 16px; padding: 8px 0; border-bottom: 1px dashed var(--line); }
+		.news li { display: flex; gap: 18px; padding: 11px 0; border-bottom: 1px solid var(--line); }
 		.news li:last-child { border-bottom: none; }
-		.news .date { flex: 0 0 96px; color: var(--muted); font-size: 14px; padding-top: 1px; }
-		.news .what { flex: 1 1 auto; }
+		.news .date { flex: 0 0 78px; color: var(--muted); font-size: 13.5px; font-variant-numeric: tabular-nums; padding-top: 1px; }
+		.news .what { flex: 1; color: var(--soft); font-size: 15px; }
+		.news .what strong { color: var(--ink); font-weight: 600; }
 
-		/* Projects (publication-style list) */
-		.entry { display: flex; gap: 22px; padding: 22px 0; border-bottom: 1px solid var(--line); }
-		.entry:last-child { border-bottom: none; }
-		.thumb {
-			flex: 0 0 150px; width: 150px; height: 100px;
-			overflow: hidden; border-radius: 6px; border: 1px solid var(--line);
-			background: #fafafa;
+		/* ---- Publications ---- */
+		.pub {
+			display: flex; gap: 22px; padding: 20px; margin: 0 -20px;
+			border-radius: 16px; transition: background .15s ease;
 		}
-		.thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
-		.entry .meta { flex: 1 1 auto; }
-		.entry h3 { margin: 0 0 4px; font-size: 18px; }
-		.entry .tags { color: var(--muted); font-size: 14px; margin: 0 0 8px; }
-		.entry p { margin: 0 0 10px; font-size: 15px; color: #333; }
-		.actions a {
-			display: inline-block; margin-right: 14px; font-size: 14px; font-weight: 500;
+		.pub:hover { background: var(--accent-soft); }
+		.pub + .pub { margin-top: 4px; }
+		.pub .thumb {
+			flex: 0 0 168px; width: 168px; height: 108px; overflow: hidden;
+			border-radius: 10px; border: 1px solid var(--line); background: #f4f5f7;
 		}
+		.pub .thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+		.pub .meta { flex: 1 1 auto; min-width: 0; }
+		.pub h3 { margin: 0 0 5px; font-size: 18px; line-height: 1.3; }
+		.pub h3 a { color: var(--ink); }
+		.pub h3 a:hover { color: var(--accent); }
+		.pub .authors { font-size: 14px; color: var(--soft); margin: 0 0 7px; }
+		.pub .authors .me { color: var(--ink); font-weight: 600; }
+		.pub .venue-row { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+		.badge {
+			font-size: 11.5px; font-weight: 600; letter-spacing: .03em; padding: 3px 9px;
+			border-radius: 6px; background: var(--chip); color: var(--soft);
+		}
+		.badge.hl { background: var(--accent); color: #fff; }
+		.badge.star { background: #f59e0b; color: #3a2400; }
+		.pub .year { font-size: 13.5px; color: var(--muted); }
+		.pub .plinks { margin-top: 8px; font-size: 13.5px; }
+		.pub .plinks a { margin-right: 14px; font-weight: 500; }
+
+		/* ---- Compact list ---- */
+		.list { list-style: none; padding: 0; margin: 0; }
+		.list li { padding: 13px 0; border-bottom: 1px solid var(--line); font-size: 15px; }
+		.list li:last-child { border-bottom: none; }
+		.list .t { color: var(--ink); font-weight: 500; }
+		.list .t a { color: var(--ink); }
+		.list .t a:hover { color: var(--accent); }
+		.list .d { color: var(--muted); font-size: 13.5px; margin-top: 3px; }
+		.list .d .me { color: var(--soft); font-weight: 600; }
 
 		footer {
-			margin-top: 64px; padding-top: 20px; border-top: 1px solid var(--line);
-			color: var(--muted); font-size: 13px; text-align: center;
+			margin-top: 64px; padding-top: 22px; border-top: 1px solid var(--line);
+			color: var(--muted); font-size: 13px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px;
 		}
 
-		@media (max-width: 600px) {
-			.wrap { padding: 40px 18px 64px; }
-			.header { gap: 20px; }
-			.avatar { width: 96px; height: 96px; font-size: 34px; }
-			.intro h1 { font-size: 27px; }
-			.entry { flex-direction: column; gap: 12px; }
-			.thumb { width: 100%; height: 160px; flex-basis: auto; }
+		@media (max-width: 620px) {
+			.wrap { padding: 36px 18px 64px; }
+			.avatar { width: 92px; height: 92px; font-size: 32px; border-radius: 18px; }
+			.intro h1 { font-size: 28px; }
+			.pub { flex-direction: column; gap: 14px; padding: 16px; margin: 0 -8px; }
+			.pub .thumb { width: 100%; height: 170px; flex-basis: auto; }
 			.news li { flex-direction: column; gap: 2px; }
 			.news .date { flex-basis: auto; }
+			.metric { flex-basis: calc(50% - 5px); }
 		}
 	</style>
 </head>
 <body>
 	<div class="wrap">
 
-		<!-- Header -->
+		<!-- ===== Header ===== -->
 		<header class="header">
 			<div class="avatar" aria-hidden="true">SK</div>
 			<div class="intro">
 				<h1>Shuja Khalid</h1>
-				<p class="role">PhD Candidate, Machine Learning &amp; Computer Vision</p>
-				<p class="affil">University of Toronto · advised by Prof. Frank Rudzicz</p>
-				<p class="email">skhalid <span aria-hidden="true">[at]</span> cs.toronto.edu</p>
+				<p class="role"><strong>Research Scientist</strong>, Huawei Canada &nbsp;·&nbsp; PhD, University of Toronto</p>
+				<p class="where">Toronto, Canada &nbsp;·&nbsp; Affiliate, Vector Institute &nbsp;·&nbsp; skhalid [at] cs.toronto.edu</p>
 				<nav class="links">
-					<a href="mailto:skhalid@cs.toronto.edu">Email</a>
-					<span class="sep">/</span>
+					<a href="mailto:skhalid@cs.toronto.edu">✉ Email</a>
+					<a href="https://scholar.google.ca/citations?user=1Fa69AYAAAAJ&hl=en">Google Scholar</a>
 					<a href="https://github.com/ShujaKhalid">GitHub</a>
-					<span class="sep">/</span>
 					<a href="https://www.linkedin.com/in/shujakhalid/">LinkedIn</a>
-					<span class="sep">/</span>
-					<a href="https://scholar.google.com/citations?user=&hl=en">Scholar</a>
 				</nav>
 			</div>
 		</header>
 
-		<!-- Bio -->
+		<!-- ===== Metrics ===== -->
+		<div class="metrics" aria-label="Citation metrics from Google Scholar">
+			<div class="metric"><div class="num">365</div><div class="lbl">Citations</div></div>
+			<div class="metric"><div class="num">6</div><div class="lbl">h-index</div></div>
+			<div class="metric"><div class="num">4</div><div class="lbl">i10-index</div></div>
+			<div class="metric"><div class="num">3</div><div class="lbl">Patents</div></div>
+		</div>
+
+		<!-- ===== About ===== -->
 		<section class="bio" id="about">
 			<h2>About</h2>
-			<p>I am a PhD candidate at the University of Toronto, supervised by Prof. Frank Rudzicz, working at the intersection of machine learning and computer vision. My research centers on visual scene understanding, representation learning, and explainable AI (XAI), with a particular interest in applications to biomedical imaging.</p>
-			<p>More broadly, I enjoy building systems that connect deep learning research to practical, real-world problems — from autonomous-driving perception to cloud-scale applications and sports analytics. Below is a selection of projects spanning these areas.</p>
+			<p>I am a Research Scientist at <strong>Huawei Canada</strong> in Toronto, working on 3D computer vision and neural rendering. I completed my PhD in Machine Learning at the <strong>University of Toronto</strong> (2019–2024), advised by Prof. Frank Rudzicz, where my thesis focused on self-supervised visual scene understanding using structured representations.</p>
+			<p>My current research centers on <strong>3D Gaussian splatting</strong> and neural rendering — making high-fidelity scene reconstruction more compact, efficient, and controllable. Alongside this, I have an ongoing interest in representation learning, explainable AI, and applying machine learning to healthcare, from surgical skill assessment to clinical outcome prediction.</p>
+			<div class="chips">
+				<span class="chip">3D Gaussian Splatting</span>
+				<span class="chip">Neural Rendering</span>
+				<span class="chip">Computer Vision</span>
+				<span class="chip">Representation Learning</span>
+				<span class="chip">Explainable AI</span>
+				<span class="chip">AI for Healthcare</span>
+			</div>
 		</section>
 
-		<!-- News -->
+		<!-- ===== News ===== -->
 		<section id="news">
 			<h2>News</h2>
 			<ul class="news">
+				<li><span class="date">2026</span><span class="what"><strong>LatentGS</strong> accepted to <strong>ICLR 2026</strong> — probabilistic densification for efficient, compact, and faster 3D Gaussian splatting.</span></li>
+				<li><span class="date">2025</span><span class="what"><strong>GaussianVAE</strong> presented at <strong>CVPR 2025</strong> — adaptive learning dynamics of 3D Gaussians for high-fidelity super-resolution.</span></li>
+				<li><span class="date">2024</span><span class="what">Completed my <strong>PhD in Machine Learning</strong> at the University of Toronto and joined Huawei Canada as a Research Scientist.</span></li>
+			</ul>
+		</section>
+
+		<!-- ===== Selected Publications ===== -->
+		<section id="publications">
+			<h2>Selected Publications</h2>
+
+			<article class="pub">
+				<a class="thumb" href="https://openreview.net/forum?id=5Dgcw1qhXq"><img src="images/papers/latentgs.jpg" alt="LatentGS rendering comparison" loading="lazy" /></a>
+				<div class="meta">
+					<h3><a href="https://openreview.net/forum?id=5Dgcw1qhXq">LatentGS: Probabilistic Densification for Efficient, Compact, and Faster 3D Gaussian Splatting</a></h3>
+					<p class="authors"><span class="me">S. Khalid</span>, M. Ibrahim, Y. Liu</p>
+					<div class="venue-row"><span class="badge hl">ICLR 2026</span><span class="year">Neural rendering · variational densification</span></div>
+					<div class="plinks"><a href="https://openreview.net/forum?id=5Dgcw1qhXq">OpenReview</a><a href="https://openreview.net/pdf?id=5Dgcw1qhXq">PDF</a></div>
+				</div>
+			</article>
+
+			<article class="pub">
+				<a class="thumb" href="https://arxiv.org/abs/2506.07897"><img src="images/papers/gaussianvae.png" alt="GaussianVAE 3D reconstruction" loading="lazy" /></a>
+				<div class="meta">
+					<h3><a href="https://arxiv.org/abs/2506.07897">GaussianVAE: Adaptive Learning Dynamics of 3D Gaussians for High-Fidelity Super-Resolution</a></h3>
+					<p class="authors"><span class="me">S. Khalid</span>, M. Ibrahim, Y. Liu</p>
+					<div class="venue-row"><span class="badge hl">CVPR 2025</span><span class="year">Real-time 3DGS super-resolution</span></div>
+					<div class="plinks"><a href="https://arxiv.org/abs/2506.07897">arXiv</a><a href="https://arxiv.org/pdf/2506.07897">PDF</a></div>
+				</div>
+			</article>
+
+			<article class="pub">
+				<a class="thumb" href="https://arxiv.org/abs/2209.10399"><img src="images/papers/wildnerf.png" alt="wildNeRF dynamic scene synthesis" loading="lazy" /></a>
+				<div class="meta">
+					<h3><a href="https://arxiv.org/abs/2209.10399">wildNeRF: Complete View Synthesis of In-the-Wild Dynamic Scenes from Sparse Monocular Data</a></h3>
+					<p class="authors"><span class="me">S. Khalid</span>, F. Rudzicz</p>
+					<div class="venue-row"><span class="badge">arXiv</span><span class="year">Self-supervised dynamic NeRF</span></div>
+					<div class="plinks"><a href="https://arxiv.org/abs/2209.10399">arXiv</a><a href="https://arxiv.org/pdf/2209.10399">PDF</a></div>
+				</div>
+			</article>
+
+			<article class="pub">
+				<a class="thumb" href="https://arxiv.org/abs/2207.00066"><img src="images/papers/readmission.png" alt="Bidirectional LSTM architecture for readmission prediction" loading="lazy" /></a>
+				<div class="meta">
+					<h3><a href="https://arxiv.org/abs/2207.00066">Advances in Prediction of Readmission Rates Using Long-Term Short-Term Memory Networks on Healthcare Insurance Data</a></h3>
+					<p class="authors"><span class="me">S. Khalid</span>, F. Matos, A. Abunimer, J. Bartlett, R. Duszak, M. Horny, J. Gichoya, et al.</p>
+					<div class="venue-row"><span class="badge">arXiv</span><span class="year">Clinical outcome prediction</span></div>
+					<div class="plinks"><a href="https://arxiv.org/abs/2207.00066">arXiv</a><a href="https://arxiv.org/pdf/2207.00066">PDF</a></div>
+				</div>
+			</article>
+		</section>
+
+		<!-- ===== Full publication list ===== -->
+		<section id="all-pubs">
+			<h2>All Publications</h2>
+			<ul class="list">
 				<li>
-					<span class="date">Ongoing</span>
-					<span class="what">Pursuing PhD research on representation learning and explainable AI for biomedical computer vision at the University of Toronto.</span>
+					<div class="t"><a href="https://openreview.net/forum?id=5Dgcw1qhXq">LatentGS: Probabilistic Densification for Efficient, Compact, and Faster 3D Gaussian Splatting</a></div>
+					<div class="d"><span class="me">S. Khalid</span>, M. Ibrahim, Y. Liu · ICLR 2026</div>
 				</li>
 				<li>
-					<span class="date">Project</span>
-					<span class="what">Maintaining <a href="http://gmaiplaybook.com/">gmaiplaybook.com</a> — machine-learning tools for quantifying NHL skater performance.</span>
+					<div class="t"><a href="https://arxiv.org/abs/2506.07897">GaussianVAE: Adaptive Learning Dynamics of 3D Gaussians for High-Fidelity Super-Resolution</a></div>
+					<div class="d"><span class="me">S. Khalid</span>, M. Ibrahim, Y. Liu · CVPR 2025</div>
+				</li>
+				<li>
+					<div class="t">Application of Semantic Segmentation Models to Quantify Ellipsoid Zone Abnormalities Detected with En-Face OCT Imaging in Uveitis Patients</div>
+					<div class="d">F. Z. Wang, Z. Chen, <span class="me">S. Khalid</span>, E. Mandelcorn, T. Felfeli · Investigative Ophthalmology &amp; Visual Science (ARVO), 2025</div>
+				</li>
+				<li>
+					<div class="t">Self-Supervised Visual Scene Understanding Using Structured Representations for Surgical Applications</div>
+					<div class="d"><span class="me">S. Khalid</span> · PhD Thesis, University of Toronto, 2024</div>
+				</li>
+				<li>
+					<div class="t">Assessment of the Predictive Value of Artificial Intelligence for Ophthalmic Diseases Using Electronic Health Records: A Systematic Review and Meta-Analysis</div>
+					<div class="d">T. Felfeli, R. S. Huang, T. S. J. Lee, …, <span class="me">S. Khalid</span>, et al. · JFO Open Ophthalmology, 2024</div>
+				</li>
+				<li>
+					<div class="t">Length of Stay Prediction Models for Oral Cancer Surgery: Machine Learning, Statistical and ACS-NSQIP</div>
+					<div class="d">A. Namavarian, A. Gabinet-Equihua, Y. Deng, <span class="me">S. Khalid</span>, et al. · The Laryngoscope, 2024</div>
+				</li>
+				<li>
+					<div class="t"><a href="https://arxiv.org/abs/2209.10399">wildNeRF: Complete View Synthesis of In-the-Wild Dynamic Scenes from Sparse Monocular Data</a></div>
+					<div class="d"><span class="me">S. Khalid</span>, F. Rudzicz · arXiv, 2023</div>
+				</li>
+				<li>
+					<div class="t"><a href="https://arxiv.org/abs/2207.00066">Advances in Prediction of Readmission Rates Using LSTM Networks on Healthcare Insurance Data</a></div>
+					<div class="d"><span class="me">S. Khalid</span>, F. Matos, A. Abunimer, et al. · arXiv, 2022</div>
+				</li>
+				<li>
+					<div class="t"><a href="https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2762915">Evaluation of Deep Learning Models for Identifying Surgical Actions and Measuring Performance</a> &nbsp;<span class="badge star">★ Most cited</span></div>
+					<div class="d"><span class="me">S. Khalid</span>, M. Goldenberg, T. Grantcharov, B. Taati, F. Rudzicz · JAMA Network Open, 2020</div>
+				</li>
+				<li>
+					<div class="t">Automated Methods of Technical Skill Assessment in Surgery: A Systematic Review</div>
+					<div class="d">M. Levin, T. McKechnie, <span class="me">S. Khalid</span>, T. P. Grantcharov, M. Goldenberg · Journal of Surgical Education, 2019</div>
 				</li>
 			</ul>
 		</section>
 
-		<!-- Projects -->
-		<section id="projects">
-			<h2>Projects</h2>
-
-			<div class="entry">
-				<div class="thumb"><img src="images/behave.PNG" alt="Behaviour cloning" /></div>
-				<div class="meta">
-					<h3>Behaviour Cloning for Autonomous Driving</h3>
-					<p class="tags">Deep Learning · Keras · CNNs</p>
-					<p>An end-to-end convolutional network that learns to steer a car in simulation from human driving data. Highlights how data augmentation and careful collection of recovery/turn data are critical to robust autonomous control.</p>
-					<div class="actions">
-						<a href="https://github.com/ShujaKhalid/Deep-Learning-BehaviourCloning">Code</a>
-						<a href="https://s3.amazonaws.com/sk-portfolio/autoDrive.mp4">Demo</a>
-					</div>
-				</div>
-			</div>
-
-			<div class="entry">
-				<div class="thumb"><img src="images/final_image.png" alt="Advanced lane detection" /></div>
-				<div class="meta">
-					<h3>Advanced Lane Detection</h3>
-					<p class="tags">Computer Vision · OpenCV</p>
-					<p>A robust pipeline that identifies the drivable region around a vehicle by extracting maximal information from each frame to build a binary map for thresholding — substantially more resilient than a basic lane finder, and extended from images to video.</p>
-					<div class="actions">
-						<a href="https://github.com/ShujaKhalid/Computer-Vision-AdvancedLaneDetection">Code</a>
-						<a href="https://s3.amazonaws.com/sk-portfolio/test_project_video_2.mp4">Demo</a>
-					</div>
-				</div>
-			</div>
-
-			<div class="entry">
-				<div class="thumb"><img src="images/classify.jpg" alt="Traffic sign classification" /></div>
-				<div class="meta">
-					<h3>Traffic Sign Classification</h3>
-					<p class="tags">Deep Learning · TensorFlow · LeNet</p>
-					<p>A LeNet-style CNN that classifies German traffic signs with ~95% test accuracy, rising to ~99% with data augmentation (flips, rotations) used to balance a non-uniform dataset.</p>
-					<div class="actions">
-						<a href="https://github.com/ShujaKhalid/Computer-Vision-TrafficSignClassifier">Code</a>
-					</div>
-				</div>
-			</div>
-
-			<div class="entry">
-				<div class="thumb"><img src="images/solidWhiteRight.jpg" alt="Lane detection" /></div>
-				<div class="meta">
-					<h3>Lane Detection Algorithm</h3>
-					<p class="tags">Computer Vision · OpenCV</p>
-					<p>A first lane-finding pipeline combining thresholding techniques with OpenCV to detect lanes in images and video — an exploration of how environmental conditions and region-of-interest choices affect detection robustness.</p>
-					<div class="actions">
-						<a href="https://github.com/ShujaKhalid/Computer-Vision-LaneFindingAlgorithm">Code</a>
-						<a href="https://s3.amazonaws.com/sk-portfolio/solidWhiteRight.mp4">Demo</a>
-					</div>
-				</div>
-			</div>
-
-			<div class="entry">
-				<div class="thumb"><img src="https://s3.amazonaws.com/gmaiplaybook/par2.png" alt="Player Availability Rating" /></div>
-				<div class="meta">
-					<h3>Player Availability Rating (PAR)</h3>
-					<p class="tags">Sports Analytics · Regression · Web Scraping</p>
-					<p>A tool for quantifying NHL skater performance for general managers, addressing gaps in how player availability and physical attributes are reflected in conventional statistics. Built with web-scraped data and tuned regression models.</p>
-					<div class="actions">
-						<a href="http://gmaiplaybook.com/">Website</a>
-						<a href="https://s3.amazonaws.com/gmaiplaybook/paper.pdf">Paper</a>
-					</div>
-				</div>
-			</div>
-
-			<div class="entry">
-				<div class="thumb"><img src="images/tstory.png" alt="Trip Story app" /></div>
-				<div class="meta">
-					<h3>Trip Story</h3>
-					<p class="tags">Mobile · iOS · Realm / Firebase</p>
-					<p>A rebus (picture) story app that lets children build personalized stories by answering creativity-testing questions, promoting early literacy and cognitive skills through interactive storytelling.</p>
-					<div class="actions">
-						<a href="https://github.com/ShujaKhalid/TripStory">Code</a>
-						<a href="http://www.eecg.utoronto.ca/~jayar/ece1778/tripstory.pdf">Report</a>
-						<a href="//www.youtube.com/embed/OmZcDVowSQA?rel=0">Demo</a>
-					</div>
-				</div>
-			</div>
-
-			<div class="entry">
-				<div class="thumb"><img src="images/ec2.PNG" alt="AWS EC2 application" /></div>
-				<div class="meta">
-					<h3>Auto-Scaling Web Application on AWS EC2</h3>
-					<p class="tags">Cloud Computing · AWS · Load Balancing</p>
-					<p>A scalable cloud application that automatically adjusts capacity to fluctuating demand and applies image transformations via ImageMagick — a hands-on look at what truly elastic infrastructure requires.</p>
-					<div class="actions">
-						<a href="https://github.com/ShujaKhalid/ec2-a1">Code</a>
-						<a href="https://github.com/ShujaKhalid/ec2-a1/blob/master/README_ec2.pdf">Report</a>
-					</div>
-				</div>
-			</div>
-
-			<div class="entry">
-				<div class="thumb"><img src="images/lambda.png" alt="AWS Lambda application" /></div>
-				<div class="meta">
-					<h3>Serverless Web Application on AWS Lambda</h3>
-					<p class="tags">Cloud Computing · AWS Lambda · Serverless</p>
-					<p>"Majority Rules!" — a serverless social application that surfaces public sentiment on global issues through constructive discussion and approval/disapproval tallies, built to minimize operating cost.</p>
-					<div class="actions">
-						<a href="https://github.com/ShujaKhalid/lambda-a2">Code</a>
-						<a href="https://github.com/ShujaKhalid/lambda-a2/blob/master/README_lambda.pdf">Report</a>
-					</div>
-				</div>
-			</div>
-
+		<!-- ===== Patents ===== -->
+		<section id="patents">
+			<h2>Patents</h2>
+			<ul class="list">
+				<li>
+					<div class="t"><a href="https://patents.google.com/patent/US11596482B2">System and Method for Surgical Performance Tracking and Measurement</a></div>
+					<div class="d"><span class="me">S. Khalid</span>, M. G. Goldenberg, T. P. Grantcharov, B. Taati, F. Rudzicz · US Patent 11,596,482 B2 (granted), 2023</div>
+				</li>
+				<li>
+					<div class="t"><a href="https://patents.google.com/patent/US20230419503A1">System and Method for Operating Room Human Traffic Monitoring</a></div>
+					<div class="d">F. Rudzicz, A. Chaudhry, <span class="me">S. Khalid</span>, T. Li, T. Grantcharov · US Patent App. US20230419503A1, 2022</div>
+				</li>
+				<li>
+					<div class="t"><a href="https://patents.google.com/patent/WO2022104484A1">Systems and Methods for Surgical Video De-Identification</a></div>
+					<div class="d">T. Li, <span class="me">S. Khalid</span>, K. Yang, F. Rudzicz, T. Grantcharov · WO Patent App. WO2022104484A1, 2022</div>
+				</li>
+			</ul>
 		</section>
 
 		<footer>
-			&copy; Shuja Khalid · University of Toronto
+			<span>&copy; Shuja Khalid</span>
+			<span>Toronto, Canada</span>
 		</footer>
 
 	</div>
