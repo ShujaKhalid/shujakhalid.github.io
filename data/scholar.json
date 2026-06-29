@@ -1,21 +1,26 @@
 {
-  "updated": "2026-06-27",
+  "updated": "2026-06-29",
   "citations": 365,
   "hindex": 6,
   "i10index": 4,
   "papers": {
     "Evaluation of deep learning models for identifying surgical actions and measuring performance": 181,
     "Automated methods of technical skill assessment in surgery: a systematic review": 129,
-    "Systems and methods for surgical video de-identification": 12,
+    "System and method for surgical performance tracking and measurement, Nov. 26 2020": 16,
+    "Systems and methods for surgical video de-identification": 0,
     "Self-Supervised Visual Scene Understanding Using Structured Representations for Surgical Applications": 9,
     "Assessment of predictive value of artificial intelligence for ophthalmic diseases using electronic health records: A systematic review and meta-analysis": 6,
-    "Length of Stay Prediction Models for Oral Cancer Surgery: Machine Learning, Statistical and ACS-NSQIP": 5,
+    "Length of Stay Prediction Models for Oral Cancer Surgery: Machine Learning, Statistical and ACS‐NSQIP": 5,
     "GaussianVAE: Adaptive Learning Dynamics of 3D Gaussians for High-Fidelity Super-Resolution": 3,
     "Advances in prediction of readmission rates using long term short term memory networks on healthcare insurance data": 2,
-    "LatentGS: Probabilistic Densification for Efficient, Compact, and Faster 3D Gaussian Splatting": 1,
     "System and method for operating room human traffic monitoring": 1,
+    "LatentGS: Probabilistic Densification for Efficient, Compact, and Faster 3D Gaussian Splatting": 1,
+    "Application of semantic segmentation models to quantify ellipsoid zone abnormalities detected with en-face optical coherence tomography imaging in uveitis patients": 0,
+    "Proceedings of IEEE/CVF Winter Conference on Applications of Computer Vision, WACV 2024": 0,
     "wildNeRF: Novel view synthesis of in-the-wild dynamic scenes using sparse monocular data": 0,
-    "RefiNeRF: Modelling dynamic neural radiance fields with inconsistent or missing camera parameters": 0,
-    "Application of semantic segmentation models to quantify ellipsoid zone abnormalities detected with en-face optical coherence tomography imaging in uveitis patients": 0
+    "wildNeRF: Novel view synthesis of in-the-wild dynamic scenes using using sparse monocular view data": 0,
+    "System and method for surgical performance tracking and measurement": 0,
+    "Computer Vision: Applications in Manufacturing, Surgery, Traffic, Satellites, and Unlabelled Data Recognition": 0,
+    "Player Availability Rating (PAR)-A Tool for Quantifying Skater Performance for NHL General Managers": 0
   }
 }
