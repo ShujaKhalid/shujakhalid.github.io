@@ -1,6 +1,6 @@
 {
-  "updated": "2026-07-10",
-  "citations": 369,
+  "updated": "2026-07-13",
+  "citations": 370,
   "hindex": 6,
   "i10index": 4,
   "papers": {
@@ -8,8 +8,8 @@
     "Automated methods of technical skill assessment in surgery: a systematic review": 130,
     "System and method for surgical performance tracking and measurement, Nov. 26 2020": 16,
     "Systems and methods for surgical video de-identification": 0,
-    "Self-Supervised Visual Scene Understanding Using Structured Representations for Surgical Applications": 7,
     "Assessment of predictive value of artificial intelligence for ophthalmic diseases using electronic health records: A systematic review and meta-analysis": 0,
+    "Self-Supervised Visual Scene Understanding Using Structured Representations for Surgical Applications": 7,
     "Length of Stay Prediction Models for Oral Cancer Surgery: Machine Learning, Statistical and ACS‐NSQIP": 5,
     "GaussianVAE: Adaptive Learning Dynamics of 3D Gaussians for High-Fidelity Super-Resolution": 0,
     "SurGNN: Explainable visual scene understanding and assessment of surgical skill using graph neural networks": 2,
